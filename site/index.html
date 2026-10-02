@@ -248,6 +248,25 @@ body{top:0!important}
 .spire{height:46px;width:2px;margin:0 auto -0.3rem;background:linear-gradient(var(--gold),transparent)}
 .base{height:10px;border-radius:0 0 12px 12px;background:linear-gradient(90deg,var(--green-d),var(--blue-d),var(--purple-d));opacity:.7}
 @media(max-width:900px){.tower-wrap{grid-template-columns:1fr}}
+
+/* city splat */
+.city{display:grid;grid-template-columns:1.25fr .75fr;gap:2rem;align-items:center}
+.splat-stage{position:relative;aspect-ratio:2/3;max-height:78vh;width:100%;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:radial-gradient(circle at 50% 30%,rgba(42,74,107,.35),transparent 60%),#0b0e12;cursor:grab;touch-action:none}
+.splat-stage:active{cursor:grabbing}
+#city3d{width:100%;height:100%;display:block}
+.splat-hud{position:absolute;left:1rem;top:1rem;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);background:rgba(15,19,24,.65);border:1px solid var(--line);border-radius:6px;padding:.35rem .6rem}
+.splat-load{position:absolute;inset:0;display:grid;place-items:center;font-size:.8rem;color:var(--muted)}
+.pipe{list-style:none;counter-reset:s;margin-top:1.2rem}
+.pipe li{counter-increment:s;position:relative;padding:.55rem 0 .55rem 2.2rem;border-bottom:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.pipe li::before{content:counter(s);position:absolute;left:0;top:.5rem;width:1.5rem;height:1.5rem;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;display:grid;place-items:center}
+.pipe b{color:var(--text);font-weight:500}
+.pipe .soon{color:var(--purple)}
+.buraq{width:min(240px,60%);margin:0 auto -1.2rem;filter:drop-shadow(0 10px 30px rgba(42,140,170,.35));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px)}}
+.portrait-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,19,24,.92) 0%,rgba(15,19,24,0) 45%)}
+.portrait b,.portrait span{position:relative;z-index:1}
+@media(max-width:900px){.city{grid-template-columns:1fr}.splat-stage{max-height:70vh}}
 </style>
 </head>
 <body>
@@ -260,6 +279,7 @@ body{top:0!important}
   <div class="nav-links">
     <a href="#mission">Mission</a>
     <a href="#tower">Tower</a>
+    <a href="#city">City</a>
     <a href="#brains">Brains</a>
     <a href="#work">Work</a>
     <a href="#gallery">Gallery</a>
@@ -333,12 +353,34 @@ body{top:0!important}
     <div class="btns"><a class="btn gold" href="https://dealerspace.abuz8ai.com">Enter Dealerspace →</a><a class="btn" href="#gallery">See ABUZ8 Town</a></div>
   </div>
   <div class="tower" aria-label="The four floors of the ABUZ8 Tower">
+    <img class="buraq" src="img/buraq.webp" alt="Al-Buraq, the winged horse emblem of ABUZ8">
     <div class="spire"></div>
     <div class="floor f4"><span class="lv">4</span><h3>The Town</h3><p>Your agents living and working as one company — 101 residents, 18 buildings, seats and pods.</p></div>
     <div class="floor f3"><span class="lv">3</span><h3>Company Brain</h3><p>Shared memory, mission ledger and Isnad receipts. Nothing counts as done until it's proven.</p></div>
     <div class="floor f2"><span class="lv">2</span><h3>Convention Hall</h3><p>Every agent and connector you own — Claude, Codex, Kimi, Hermes, OpenClaw, MCP — in one room.</p></div>
     <div class="floor f1"><span class="lv">1</span><h3>The Vault</h3><p>Your keys and subscriptions, held locally. Sign in once; the Tower routes to the right brain.</p></div>
     <div class="base"></div>
+  </div>
+</div></section>
+
+<!-- CITY SPLAT -->
+<section id="city"><div class="wrap city">
+  <div class="splat-stage" id="cityStage">
+    <canvas id="city3d" aria-label="Interactive 3D Gaussian splat reconstruction of Cincinnati with Ahmad flying above it"></canvas>
+    <div class="splat-hud">ABUZ8 City · 519,593 splats · drag to orbit</div>
+    <div class="splat-load" id="cityLoad">Reconstructing the city…</div>
+  </div>
+  <div>
+    <div class="label">First city, reconstructed</div>
+    <h2>A 2D image, <em>rebuilt as a 3D world.</em></h2>
+    <p class="sub" style="margin-bottom:1rem">Cincinnati from 1,200 feet, with me in the Emerald Vanguard suit. The frame was run through a depth model and every pixel became a Gaussian splat placed in 3D space. Drag it: the city falls away, the river bends, and the HUD floats at its own layer.</p>
+    <ol class="pipe">
+      <li><b>Image</b> — generated concept frame, 682 × 1024</li>
+      <li><b>Depth</b> — Depth Anything V2, full per-pixel depth map</li>
+      <li><b>Splats</b> — 519,593 Gaussians, depth-cliff filtered, occluded city inpainted behind me</li>
+      <li><b>Export</b> — standard 3DGS <code>.ply</code>, opens in SuperSplat and Postshot</li>
+      <li class="soon"><b>Next</b> — multi-view renders → COLMAP → trained splats of the green Sahara city</li>
+    </ol>
   </div>
 </div></section>
 
@@ -507,7 +549,7 @@ body{top:0!important}
 
 <!-- ABOUT -->
 <section id="about"><div class="wrap about">
-  <div class="portrait"><div class="mono">ع</div><b>Ahmad A M Odeh</b><span>Founder · ABUZ8 LLC · Dayton, Ohio</span></div>
+  <div class="portrait"><img class="portrait-img" src="img/ahmad.jpg" alt="Ahmad A M Odeh, illustrated as a warrior in green and gold"><b>Ahmad A M Odeh</b><span>Founder · ABUZ8 LLC · Dayton, Ohio</span></div>
   <div>
     <div class="label">About</div>
     <h2>Hi, I'm Ahmad. <em>I finish what doesn't exist yet.</em></h2>
@@ -646,5 +688,42 @@ body{top:0!important}
 })();
 </script>
 
+<script>
+/* ABUZ8 City — loads quantized splats (.az8s) and renders them as depth-tested Gaussian discs */
+(function(){
+  var cv=document.getElementById('city3d'),stage=document.getElementById('cityStage'),load=document.getElementById('cityLoad');
+  if(!cv||!window.THREE)return;
+  var started=false;
+  function start(){if(started)return;started=true;
+    var src=window.AZ8_CITY_B64?Promise.resolve(Uint8Array.from(atob(window.AZ8_CITY_B64),function(c){return c.charCodeAt(0)}).buffer):fetch('img/city.az8s').then(function(r){if(!r.ok)throw new Error(r.status);return r.arrayBuffer()});
+    src.then(build).catch(function(){load.textContent='City data unavailable.'})}
+  function build(buf){
+    var dv=new DataView(buf),n=dv.getUint32(4,true),lo=[dv.getFloat32(8,true),dv.getFloat32(12,true),dv.getFloat32(16,true)],hi=[dv.getFloat32(20,true),dv.getFloat32(24,true),dv.getFloat32(28,true)],smax=dv.getFloat32(32,true);
+    var b=new Uint8Array(buf,36),pos=new Float32Array(n*3),col=new Float32Array(n*3),sz=new Float32Array(n);
+    for(var i=0;i<n;i++){var o=i*10;for(var k=0;k<3;k++){var q=b[o+k*2]|(b[o+k*2+1]<<8);pos[i*3+k]=lo[k]+q/65535*(hi[k]-lo[k])}col[i*3]=b[o+6]/255;col[i*3+1]=b[o+7]/255;col[i*3+2]=b[o+8]/255;sz[i]=b[o+9]/255*smax}
+    var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio||1,2));
+    var S=new THREE.Scene(),C=new THREE.PerspectiveCamera(58,1,.01,50);
+    var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));g.setAttribute('sz',new THREE.BufferAttribute(sz,1));
+    var m=new THREE.ShaderMaterial({vertexColors:true,uniforms:{uH:{value:600},uT:{value:0}},
+      vertexShader:'attribute float sz;varying vec3 vC;uniform float uH;void main(){vec4 mv=modelViewMatrix*vec4(position,1.);gl_Position=projectionMatrix*mv;gl_PointSize=max(1.5,sz*2.2*projectionMatrix[1][1]*uH*.5/-mv.z);vC=color;}',
+      fragmentShader:'varying vec3 vC;void main(){vec2 d=gl_PointCoord-.5;float r=dot(d,d);if(r>.25)discard;gl_FragColor=vec4(vC*(0.92+0.16*exp(-r*10.)),1.);}'});
+    S.add(new THREE.Points(g,m));
+    var cz=(lo[2]+hi[2])/2,target=new THREE.Vector3(0,0,-1.9),yaw=0,pitch=0,ty=0,tp=0,drag=false,lx=0,ly=0,idle=0,dist=2.3;
+    function rs(){var r=stage.getBoundingClientRect();R.setSize(r.width,r.height,false);C.aspect=r.width/r.height;C.updateProjectionMatrix();m.uniforms.uH.value=r.height*R.getPixelRatio()}
+    rs();addEventListener('resize',rs);
+    stage.addEventListener('pointerdown',function(e){drag=true;lx=e.clientX;ly=e.clientY;stage.setPointerCapture(e.pointerId)});
+    stage.addEventListener('pointermove',function(e){if(!drag)return;ty+=(e.clientX-lx)*.004;tp+=(e.clientY-ly)*.003;ty=Math.max(-.24,Math.min(.24,ty));tp=Math.max(-.13,Math.min(.13,tp));lx=e.clientX;ly=e.clientY;idle=0});
+    stage.addEventListener('pointerup',function(){drag=false});
+    stage.addEventListener('wheel',function(e){e.preventDefault();dist=Math.max(1.2,Math.min(3,dist+e.deltaY*.001))},{passive:false});
+    var vis=true;new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(stage);
+    load.remove();var t0=performance.now();
+    (function f(){requestAnimationFrame(f);if(!vis)return;var t=(performance.now()-t0)/1000;idle+=1/60;
+      if(!drag&&idle>2.5){ty+=(Math.sin(t*.25)*.22-ty)*.01;tp+=(Math.sin(t*.17)*.07-tp)*.01}
+      yaw+=(ty-yaw)*.08;pitch+=(tp-pitch)*.08;
+      C.position.set(target.x+Math.sin(yaw)*dist*Math.cos(pitch),target.y+Math.sin(pitch)*dist,target.z+Math.cos(yaw)*dist*Math.cos(pitch));C.lookAt(target);R.render(S,C)})();
+  }
+  new IntersectionObserver(function(e){if(e[0].isIntersecting)start()},{rootMargin:'400px'}).observe(stage);
+})();
+</script>
 </body>
 </html>
