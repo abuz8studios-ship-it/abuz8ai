@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ABUZ8 AI — Turn the Sahara Green. An AI Agent in Every Pocket.</title>
+<meta name="description" content="Ahmad A M Odeh, founder of ABUZ8 LLC. Sovereign AI built on real hardware: a 380B local inference engine, a six-brain fleet, ABUZ8 OS and 38 shipped builds — funding a zero-emission AI city and a green Sahara.">
+<meta property="og:title" content="ABUZ8 AI — Sovereign AI with a mission">
+<meta property="og:description" content="One founder. A 380B model on a desk. Six local brains. 7 billion tokens of shipped work. Building toward a green Sahara and an AI agent in every pocket.">
+<meta property="og:image" content="img/abuz8-town.jpg">
+<meta name="theme-color" content="#0F1318">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F1318;--card:#161B22;--card2:#1B2129;
+  --gold:#C8A55C;--gold-soft:rgba(200,165,92,.12);--line:rgba(200,165,92,.14);
+  --green:#5E9C7A;--green-d:#3D6B52;--blue:#5A86B5;--blue-d:#2A4A6B;--purple:#8F82CF;--purple-d:#2E2550;--sand:#C99B5E;
+  --text:#E2DDD3;--muted:#8A8478;
+  --serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',system-ui,-apple-system,sans-serif;
+}
+:root[data-theme="light"]{--bg:#F6F2EA;--card:#FFFDF8;--card2:#F1ECE2;--text:#1E1B16;--muted:#6B6458;--line:rgba(120,90,30,.18);--gold:#9A7428;}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);background-image:linear-gradient(160deg,rgba(42,74,107,.10) 0%,rgba(46,37,80,.08) 1400px,rgba(61,107,82,.08) 2800px,rgba(200,165,92,.05) 4200px,transparent 5600px);color:var(--text);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+code{font-family:ui-monospace,Menlo,monospace;font-size:.85em;color:var(--gold)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(15,19,24,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:2rem;height:60px}
+.logo{font-family:var(--serif);font-size:1.15rem;color:var(--gold);letter-spacing:.08em}
+.logo small{font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;color:var(--muted);margin-left:.5rem}
+.nav-links{display:flex;gap:1.5rem;font-size:.83rem;color:var(--muted);margin-left:auto}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{font-size:.8rem;padding:.45rem 1rem;border:1px solid var(--gold);border-radius:6px;color:var(--gold);white-space:nowrap}
+.nav-cta:hover{background:var(--gold-soft)}
+
+/* hire bar */
+.hire-bar{background:linear-gradient(90deg,rgba(61,107,82,.25),rgba(200,165,92,.18),rgba(42,74,107,.25));border-bottom:1px solid var(--line);font-size:.82rem;text-align:center;padding:.55rem 1rem}
+.hire-bar b{color:var(--gold);font-weight:500}
+.hire-bar a{text-decoration:underline;text-underline-offset:3px;color:var(--text)}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#62C48A;margin-right:.45rem;box-shadow:0 0 0 0 rgba(98,196,138,.6);animation:pulse 2s infinite;vertical-align:1px}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(98,196,138,0)}100%{box-shadow:0 0 0 0 rgba(98,196,138,0)}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+#land{position:absolute;inset:0;width:100%;height:100%;opacity:.95}
+.hero-in{position:relative;padding:6rem 0 4.5rem;display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:end}
+.eyebrow{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1.3rem}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.5rem,6vw,4.6rem);line-height:1.04;letter-spacing:-.01em;margin-bottom:1.4rem}
+h1 em{color:var(--gold)}
+.lede{font-size:1.08rem;color:var(--muted);max-width:600px;margin-bottom:2rem}
+.lede strong{color:var(--text);font-weight:500}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{padding:.75rem 1.4rem;border-radius:7px;font-size:.88rem;border:1px solid var(--line);color:var(--text);transition:.15s}
+.btn:hover{border-color:var(--gold)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#14110B;font-weight:500}
+.btn.gold:hover{filter:brightness(1.08)}
+.hero-card{background:rgba(22,27,34,.82);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:1.4rem}
+.hero-card .k{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.big{font-family:var(--serif);font-size:2.6rem;color:var(--gold);line-height:1.05}
+.hero-card .row{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:.55rem 0;font-size:.82rem}
+.hero-card .row span:last-child{color:var(--text);font-weight:500}
+.hero-card .row span:first-child{color:var(--muted)}
+
+/* ticker */
+.ticker{overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line);background:rgba(22,27,34,.55);padding:.55rem 0}
+.ticker div{display:inline-block;animation:tick 70s linear infinite}
+.ticker span{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-right:2.6rem}
+.ticker span::before{content:"◆ ";color:var(--gold)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* sections */
+section{padding:5rem 0;border-bottom:1px solid var(--line)}
+.label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:.7rem}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.12;margin-bottom:.9rem}
+h2 em{color:var(--gold)}
+.sub{color:var(--muted);max-width:640px;margin-bottom:2.5rem}
+.grid{display:grid;gap:1rem}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.4rem;transition:.15s}
+.card:hover{border-color:rgba(200,165,92,.35)}
+.card h3{font-size:1rem;font-weight:500;margin-bottom:.35rem}
+.card p{font-size:.85rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;padding:.22rem .55rem;border-radius:4px;margin-bottom:.7rem}
+.t-gold{background:rgba(200,165,92,.14);color:var(--gold)}
+.t-green{background:rgba(61,107,82,.25);color:var(--green)}
+.t-blue{background:rgba(42,74,107,.3);color:var(--blue)}
+.t-purple{background:rgba(46,37,80,.45);color:var(--purple)}
+.t-sand{background:rgba(201,155,94,.14);color:var(--sand)}
+.more{display:inline-block;margin-top:.9rem;font-size:.8rem;color:var(--gold)}
+
+/* mission */
+.mission-quote{font-family:var(--serif);font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.35;border-left:2px solid var(--gold);padding-left:1.4rem;margin-bottom:3rem;max-width:880px}
+.mission-quote em{color:var(--green)}
+.pillar .n{font-family:var(--serif);font-size:2.2rem;color:var(--gold);line-height:1;margin-bottom:.8rem}
+.pillar .ic{font-size:1.5rem;margin-bottom:.7rem}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:2.5rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.flow div{padding:1.1rem 1.2rem;background:var(--card);border-right:1px solid var(--line);font-size:.82rem;color:var(--muted)}
+.flow div:last-child{border-right:0}
+.flow b{display:block;font-weight:500;color:var(--text);font-size:.92rem;margin-bottom:.2rem}
+.flow i{font-style:normal;color:var(--gold);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* brains (Mia-style model cards) */
+.brain{position:relative}
+.brain .top{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem}
+.brain h3{font-family:var(--serif);font-weight:400;font-size:1.35rem;margin:.1rem 0 .2rem}
+.brain .stack{font-size:.72rem;color:var(--muted);margin-bottom:1rem}
+.brain .speed{font-family:var(--serif);font-size:2.1rem;color:var(--gold);line-height:1}
+.brain .speed small{font-family:var(--sans);font-size:.75rem;color:var(--muted);margin-left:.25rem}
+.brain .unit{font-size:.7rem;color:var(--muted);margin-bottom:1rem}
+.brain dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;font-size:.78rem;border-top:1px solid var(--line);padding-top:.8rem}
+.brain dt{color:var(--muted)}
+.brain dd{text-align:right}
+.brain.fav{border-color:var(--gold);background:linear-gradient(180deg,rgba(200,165,92,.06),transparent 60%),var(--card)}
+.pill{font-size:.62rem;padding:.2rem .5rem;border-radius:20px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.fleet-head{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin:3rem 0 1rem}
+.fleet-head h3{font-family:var(--serif);font-weight:400;font-size:1.5rem}
+.fleet-head p{font-size:.82rem;color:var(--muted);max-width:520px}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+th,td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:500}
+td.g{color:var(--gold)}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.shot{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.2s}
+.shot:hover{border-color:var(--gold);transform:translateY(-2px)}
+.shot img{aspect-ratio:16/10;object-fit:cover;object-position:top;width:100%;border-bottom:1px solid var(--line)}
+.shot div{padding:.85rem 1rem}
+.shot b{font-weight:500;font-size:.88rem;display:block}
+.shot span{font-size:.74rem;color:var(--muted)}
+.shot.wide{grid-column:span 2}
+.shot.wide img{aspect-ratio:16/8.2}
+
+/* projects */
+.proj{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;padding:1.1rem 1.3rem}
+.proj h3{margin-bottom:.15rem}
+.proj .stat{text-align:right;min-width:72px}
+.proj .stat b{display:block;font-family:var(--serif);font-weight:400;font-size:1.55rem;color:var(--gold);line-height:1}
+.proj .stat span{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1rem;margin-bottom:2.5rem}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1rem;text-align:center}
+.stats b{display:block;font-family:var(--serif);font-weight:400;font-size:1.9rem;color:var(--gold);line-height:1.1}
+.stats span{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+/* store tiers / services */
+.price{font-family:var(--serif);font-size:2.3rem;color:var(--gold);line-height:1;margin:.3rem 0 .4rem}
+.price small{font-family:var(--sans);font-size:.8rem;color:var(--muted)}
+.card ul{list-style:none;margin:.8rem 0 1.1rem;font-size:.82rem;color:var(--muted)}
+.card li{padding:.25rem 0;padding-left:1.1rem;position:relative}
+.card li::before{content:"✓";position:absolute;left:0;color:var(--green)}
+.card .btn{display:block;text-align:center}
+.card.hot{border-color:var(--gold)}
+.hubs a.card{display:block}
+.hubs .ic{font-size:1.3rem;margin-bottom:.5rem}
+
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:3rem;align-items:start}
+.portrait{aspect-ratio:4/5;border-radius:14px;border:1px solid var(--line);background:radial-gradient(circle at 50% 35%,rgba(200,165,92,.22),transparent 55%),linear-gradient(170deg,var(--blue-d),var(--purple-d) 50%,var(--green-d));display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem;position:relative;overflow:hidden}
+.portrait .mono{position:absolute;top:22%;left:0;right:0;text-align:center;font-family:var(--serif);font-size:5.5rem;color:var(--gold);opacity:.9}
+.portrait b{font-family:var(--serif);font-weight:400;font-size:1.3rem}
+.portrait span{font-size:.78rem;color:rgba(226,221,211,.75)}
+.timeline{border-left:1px solid var(--line);margin-top:1.5rem}
+.timeline div{position:relative;padding:0 0 1.1rem 1.4rem;font-size:.86rem;color:var(--muted)}
+.timeline div::before{content:"";position:absolute;left:-5px;top:.45rem;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.timeline b{color:var(--text);font-weight:500}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+form{display:grid;gap:.8rem}
+input,select,textarea{width:100%;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.75rem .9rem;color:var(--text);font:inherit;font-size:.88rem}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold)}
+textarea{min-height:120px;resize:vertical}
+.socials{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.socials a{font-size:.8rem;padding:.45rem .9rem;border:1px solid var(--line);border-radius:6px;color:var(--muted)}
+.socials a:hover{color:var(--gold);border-color:var(--gold)}
+
+footer{padding:3rem 0 2rem;font-size:.8rem;color:var(--muted)}
+.foot{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:2rem}
+.foot h4{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text);font-weight:500;margin-bottom:.8rem}
+.foot a{display:block;padding:.18rem 0}
+.foot a:hover{color:var(--gold)}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--line);margin-top:2.5rem;padding-top:1.5rem}
+
+@media(max-width:900px){
+  .hero-in,.about,.contact{grid-template-columns:1fr}
+  .g4,.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:1fr 1fr}
+  .flow div:nth-child(2){border-right:0}
+  .foot{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+}
+@media(max-width:560px){
+  .g2,.g3,.g4,.gallery,.flow{grid-template-columns:1fr}
+  .shot.wide{grid-column:auto}
+  .flow div{border-right:0;border-bottom:1px solid var(--line)}
+  .proj{grid-template-columns:1fr}.proj .stat{text-align:left}
+  section{padding:3.5rem 0}
+}
+</style>
+</head>
+<body>
+
+<div class="hire-bar"><span class="dot"></span><b>Available now</b> — hiring for AI engineering / agent systems roles and contract builds. <a href="#hire">Hire Ahmad →</a></div>
+
+<nav><div class="wrap nav">
+  <a class="logo" href="#top">ABUZ8<small>SOVEREIGN AI</small></a>
+  <div class="nav-links">
+    <a href="#mission">Mission</a>
+    <a href="#brains">Brains</a>
+    <a href="#work">Work</a>
+    <a href="#gallery">Gallery</a>
+    <a href="/tools.html">Free Tools</a>
+    <a href="/store.html">Store</a>
+    <a href="#about">About</a>
+  </div>
+  <a class="nav-cta" href="#hire">Hire Ahmad</a>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <canvas id="land" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <div>
+      <div class="eyebrow">Ahmad A M Odeh · Founder, ABUZ8 LLC · Dayton, Ohio</div>
+      <h1>Turn the Sahara <em>green.</em><br>Put an AI agent in <em>every pocket.</em></h1>
+      <p class="lede">I build sovereign AI on my own hardware — <strong>a 380-billion-parameter model running on one desk</strong>, a six-brain local fleet, and a full agent operating system. Every dollar it earns goes toward the mission: desalinated water, a living Sahara, and a zero-emission city built by AI.</p>
+      <div class="btns">
+        <a class="btn gold" href="#hire">Hire me / book a build →</a>
+        <a class="btn" href="#brains">See the brains</a>
+        <a class="btn" href="#gallery">See the work</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="k">One year, measured to the token</div>
+      <div class="big">7.09B</div>
+      <div style="font-size:.78rem;color:var(--muted);margin-bottom:.8rem">tokens of engineering work, parsed from disk</div>
+      <div class="row"><span>Claude Code sessions</span><span>2,366</span></div>
+      <div class="row"><span>Exchanges logged</span><span>60,363</span></div>
+      <div class="row"><span>Largest local model run</span><span>380.9B MoE</span></div>
+      <div class="row"><span>Pages live on abuz8ai.com</span><span>904</span></div>
+      <div class="row"><span>Free tools in browser</span><span>159</span></div>
+    </aside>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true"><div>
+<span>FAIE · GLM-5.2 380.9B on one RTX 5090</span><span>32.03 tok/s measured · bit-identical</span><span>Six-brain local fleet</span><span>Nemotron 1M context on one GPU</span><span>ABUZ8 OS v2.65</span><span>ABUZ8 RIG · signal + YouTube agents</span><span>101-agent ABUZ8 Town</span><span>OpenClaw PR #152328</span><span>Isnad: every claim proven</span><span>Zero emission · zero lock-in</span>
+<span>FAIE · GLM-5.2 380.9B on one RTX 5090</span><span>32.03 tok/s measured · bit-identical</span><span>Six-brain local fleet</span><span>Nemotron 1M context on one GPU</span><span>ABUZ8 OS v2.65</span><span>ABUZ8 RIG · signal + YouTube agents</span><span>101-agent ABUZ8 Town</span><span>OpenClaw PR #152328</span><span>Isnad: every claim proven</span><span>Zero emission · zero lock-in</span>
+</div></div>
+
+<!-- MISSION -->
+<section id="mission"><div class="wrap">
+  <div class="label">The mission</div>
+  <h2>Why I build: <em>a home for everyone,</em><br>grown out of the desert.</h2>
+  <p class="mission-quote">Generate the income to desalinate the ocean, turn the Sahara into a <em>living rainforest</em>, and build villages, mosques and a city where anyone can come and call home — built by AI, powered clean, and living <em>in symbiosis</em> with the land instead of consuming it.</p>
+
+  <div class="grid g4">
+    <div class="card pillar"><div class="n">01</div><span class="tag t-blue">Water</span><h3>Desalinate the ocean</h3><p>Solar-powered desalination at scale, routed by AI that schedules energy, flow and maintenance with zero idle waste.</p></div>
+    <div class="card pillar"><div class="n">02</div><span class="tag t-green">Land</span><h3>Sahara → rainforest</h3><p>Re-green the desert with AI-planned planting, soil restoration and water corridors — the land heals as the city grows.</p></div>
+    <div class="card pillar"><div class="n">03</div><span class="tag t-sand">Home</span><h3>Villages and mosques</h3><p>Places of worship, homes and schools open to everyone — a land people choose to come to and stay in.</p></div>
+    <div class="card pillar"><div class="n">04</div><span class="tag t-purple">City</span><h3>The AI-built city</h3><p>Zero-emission, fully self-sufficient, designed and run by agents. It fuses with its environment — it doesn't destroy it.</p></div>
+  </div>
+
+  <div class="flow">
+    <div><i>Step 1 · now</i><b>An agent in every pocket</b>Sovereign agents people own, not rent.</div>
+    <div><i>Step 2</i><b>Revenue</b>Builds, products and the store fund the work.</div>
+    <div><i>Step 3</i><b>Water and soil</b>Desalination and re-greening pilots.</div>
+    <div><i>Step 4</i><b>The city</b>An AI-built, zero-emission home for everyone.</div>
+  </div>
+</div></section>
+
+<!-- BRAINS -->
+<section id="brains"><div class="wrap">
+  <div class="label">The brains</div>
+  <h2>Frontier models, <em>running on my own desk.</em></h2>
+  <p class="sub">Two RTX 5090s, 128 GB of RAM, no cloud. Every number below was measured on my hardware and read from model headers — not vendor claims. When a test embarrassed me, I published that too.</p>
+
+  <div class="grid g3">
+    <div class="card brain fav">
+      <div class="top"><span class="tag t-gold">Flagship · the engine</span><span class="pill">380.9B MoE</span></div>
+      <h3>FAIE</h3>
+      <div class="stack">Fused Arabic Inference Engine · GLM-5.2-REAM · custom CUDA kernel</div>
+      <div class="speed">32.03<small>tok/s</small></div>
+      <div class="unit">measured at 100% expert residency · 1.306× baseline · bit-identical output</div>
+      <dl><dt>Parameters</dt><dd>380.9B (40.7B active)</dd><dt>Layers</dt><dd>3 dense + 75 MoE · MLA</dd><dt>Ternary pack</dt><dd>129 GB → 70 GB</dd><dt>Proof</dt><dd>9 / 9 checks passed</dd><dt>Hardware</dt><dd>one RTX 5090</dd></dl>
+    </div>
+    <div class="card brain">
+      <div class="top"><span class="tag t-purple">Personal brain</span><span class="pill">4 layers</span></div>
+      <h3>ABUZ8 Superbrain</h3>
+      <div class="stack">AHMAD-1 + MUTHALLATH-1 + FAIE, fused into one recursive learner</div>
+      <div class="speed">2,582<small>sessions</small></div>
+      <div class="unit">of my own reasoning, 1.39 GB of transcripts as training corpus</div>
+      <dl><dt>Layer 1</dt><dd>Geometric (triangle reasoning)</dd><dt>Layer 2</dt><dd>Arabic roots · 5-sense tokens</dd><dt>Layer 3</dt><dd>Frontier donor organs</dd><dt>Layer 4</dt><dd>Isnad-verified nightly QLoRA</dd><dt>Status</dt><dd>in training</dd></dl>
+    </div>
+    <div class="card brain">
+      <div class="top"><span class="tag t-green">Research</span><span class="pill">0.6B + adapters</span></div>
+      <h3>MUTHALLATH-1</h3>
+      <div class="stack">مثلث · geometric-neurosymbolic layers · Qwen3-0.6B + 7 triangle adapters</div>
+      <div class="speed">5<small>campaigns</small></div>
+      <div class="unit">trained Aug 18–24, 20+ checkpoints, full evidence ledger</div>
+      <dl><dt>Adapters</dt><dd>7.94M params</dd><dt>Corpus</dt><dd>Arabic 175 MB + specialist</dd><dt>Arenas</dt><dd>tool-control, chess, self-learn</dd><dt>Next</dt><dd>larger backbone retest</dd><dt>Ledger</dt><dd>published, honest</dd></dl>
+    </div>
+  </div>
+
+  <div class="fleet-head">
+    <h3>The first fleet — six local brains</h3>
+    <p>The original set I tested head-to-head on 2× RTX 5090 (Aug 16–18, 2026). Architecture read straight from GGUF headers.</p>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Brain</th><th>Architecture</th><th>Context</th><th>Fit on one 5090</th><th>Role in the fleet</th></tr></thead>
+    <tbody>
+      <tr><td>Muse Glimmer 30B</td><td>Dense, distilled from Muse Spark</td><td>131,072</td><td class="g">15.9 GB · Q4</td><td>Resident brain · donor tokenizer</td></tr>
+      <tr><td>Qwen3.8-27B (abliterated)</td><td>Hybrid Mamba · 16 attn / 64 blocks</td><td>262,144</td><td class="g">17.9 GB · Q5</td><td>Reasoner · zero-refusal traces</td></tr>
+      <tr><td>Nemotron 3 Nano Omni</td><td>30B-A3B · Mamba-2 + MoE</td><td>1,048,576</td><td class="g">28.0 / 31.8 GiB</td><td>1M-token omni (text·image·video·audio)</td></tr>
+      <tr><td>Ornith 1.0</td><td>35B-A3B · hybrid MoE</td><td>262,144</td><td class="g">24.7 / 31.8 GiB</td><td>Self-scaffolding training loop</td></tr>
+      <tr><td>Qwen-AgentWorld</td><td>35B-A3B · hybrid MoE</td><td>262,144</td><td class="g">25.6 / 31.8 GiB</td><td>Agent / tool worker</td></tr>
+      <tr><td>Bonsai-27B Ternary</td><td>1.71-bit QAT · PrismML fork</td><td>—</td><td class="g">7.7 GB</td><td>Compression research · DSpark drafter</td></tr>
+    </tbody>
+  </table></div>
+  <p style="font-size:.78rem;color:var(--muted);margin-top:.9rem">Field Report 001 · <em>The Brain Tournament</em> — three brains sat math, knowledge and tool-calling exams at temp 0 on a single card, one model per GPU, zero VRAM spill. Full report in the gallery below.</p>
+</div></section>
+
+<!-- WORK / PROJECTS -->
+<section id="work"><div class="wrap">
+  <div class="label">One year · shipped</div>
+  <h2>88 sessions graded. <em>38 shipped builds.</em></h2>
+  <p class="sub">Every chat from the year was exported and graded A–F against what actually landed on disk. These are the builds that shipped.</p>
+
+  <div class="stats">
+    <div><b>88</b><span>Sessions graded</span></div>
+    <div><b>38</b><span>B-grade shipped</span></div>
+    <div><b>16</b><span>GitHub repos</span></div>
+    <div><b>101</b><span>Town agents</span></div>
+    <div><b>23</b><span>Live products</span></div>
+    <div><b>0</b><span>Fake claims</span></div>
+  </div>
+
+  <div class="grid">
+    <div class="card proj"><div><span class="tag t-green">Agent OS</span><h3>ABUZ8 OS v2.65</h3><p>Sovereign agent operating system: brain, runtime, skills and dashboard in one image. Brain-selector bugs found and patched Sep 25 with backups and syntax checks.</p></div><div class="stat"><b>v2.65</b><span>live</span></div></div>
+    <div class="card proj"><div><span class="tag t-gold">Agents</span><h3>ABUZ8 RIG</h3><p>One board, many agents. Signal agent scores Hacker News, Reddit, Devpost and Product Hunt 0–100 hourly; YouTube agent mines six creators; 8 am Telegram digest; OpenRig bridge to Claude and Codex seats. Local brain = $0 tokens.</p></div><div class="stat"><b>$0</b><span>token cost</span></div></div>
+    <div class="card proj"><div><span class="tag t-purple">Simulation</span><h3>ABUZ8 Town</h3><p>A working company of 101 agent residents across 18 buildings — Command Core, Council of Knights, Sales, Marketing, Dev Shop, Research, Treasury.</p></div><div class="stat"><b>101</b><span>agents</span></div></div>
+    <div class="card proj"><div><span class="tag t-blue">Harness</span><h3>OpenRig rig system</h3><p>10 files, ~1,772 lines: seats, pods, APM, refocus, A2A, an MCP server and Xerox company templates.</p></div><div class="stat"><b>1,772</b><span>lines</span></div></div>
+    <div class="card proj"><div><span class="tag t-sand">SaaS</span><h3>ABUZ8 AI CMO</h3><p>Eight-agent marketing engine — SEO, GEO, content, Reddit, X, LinkedIn, influencer, code. URL in, audit and dashboard out.</p></div><div class="stat"><b>8</b><span>agents</span></div></div>
+    <div class="card proj"><div><span class="tag t-sand">SaaS</span><h3>Dealerspace</h3><p>One workspace where any AI agent — any provider, any subscription — logs in and works toward one company goal. Live on Cloudflare Pages.</p></div><div class="stat"><b>Live</b><span>Sep 28</span></div></div>
+    <div class="card proj"><div><span class="tag t-blue">Open source</span><h3>OPC-1 → OpenClaw</h3><p>Migration to an OpenClaw submodule, verify script and release docs; upstream PR #152328 opened.</p></div><div class="stat"><b>PR</b><span>#152328</span></div></div>
+    <div class="card proj"><div><span class="tag t-green">Tooling</span><h3>Universal Agent Bundler</h3><p>Any repo → one portable exe with model, runtime, skills and dashboard embedded. No Docker, no WSL.</p></div><div class="stat"><b>1</b><span>exe</span></div></div>
+    <div class="card proj"><div><span class="tag t-gold">Method</span><h3>Isnad · ProofLoop</h3><p>Chain-of-custody verification for agent work: nothing counts as done until it's proven on disk. The anti-hallucination layer under everything here.</p></div><div class="stat"><b>5</b><span>rules</span></div></div>
+    <div class="card proj"><div><span class="tag t-blue">Product</span><h3>LotVue360</h3><p>Real-estate SaaS. Replaced Google-only OAuth with email/password auth and redeployed via Wrangler.</p></div><div class="stat"><b>Fixed</b><span>auth</span></div></div>
+  </div>
+  <a class="more" href="/journey.html">Full journey, Day 0 → now →</a>
+</div></section>
+
+<!-- GALLERY -->
+<section id="gallery"><div class="wrap">
+  <div class="label">Gallery</div>
+  <h2>Screens from <em>the actual work.</em></h2>
+  <p class="sub">Captured straight from the dashboards, proofs and reports I built this year. No mockups.</p>
+  <div class="gallery">
+    <figure class="shot wide"><img src="img/abuz8-town.jpg" alt="ABUZ8 Town — 101 agents across 18 buildings" loading="lazy"><div><b>ABUZ8 Town</b><span>101 residents · 18 buildings · live snapshot</span></div></figure>
+    <figure class="shot"><img src="img/faie-proof.jpg" alt="FAIE proof — all 9 checks passed" loading="lazy"><div><b>FAIE proof</b><span>GLM-5.2 on one 5090 · 9/9 checks</span></div></figure>
+    <figure class="shot"><img src="img/brain-fleet.jpg" alt="The Fleet, measured — six brains vs 2×5090" loading="lazy"><div><b>The fleet, measured</b><span>Six brains read from GGUF headers</span></div></figure>
+    <figure class="shot"><img src="img/brain-tournament.jpg" alt="The Brain Tournament field report" loading="lazy"><div><b>The Brain Tournament</b><span>Field Report 001 · temp 0</span></div></figure>
+    <figure class="shot"><img src="img/living-brain.jpg" alt="The ABUZ8 Living Brain — 7 months mapped by day" loading="lazy"><div><b>The Living Brain</b><span>Seven months, mapped by day</span></div></figure>
+    <figure class="shot"><img src="img/agent-roster.jpg" alt="Agent Town Roster" loading="lazy"><div><b>Agent roster</b><span>Every seat, role and knight</span></div></figure>
+    <figure class="shot"><img src="img/forge.jpg" alt="ABUZ8 Forge" loading="lazy"><div><b>ABUZ8 Forge</b><span>One word to a shipped system</span></div></figure>
+    <figure class="shot"><img src="img/ai-native-os.jpg" alt="ABUZ8 AI-Native OS" loading="lazy"><div><b>AI-Native OS</b><span>From bare metal to brain</span></div></figure>
+    <figure class="shot"><img src="img/media-pipeline.jpg" alt="ABUZ8 OS media pipeline proof" loading="lazy"><div><b>Media pipeline proof</b><span>Local video and voice generation</span></div></figure>
+    <figure class="shot"><img src="img/empire-ledger.jpg" alt="The Empire Ledger" loading="lazy"><div><b>The Empire Ledger</b><span>Every project, every decision</span></div></figure>
+  </div>
+</div></section>
+
+<!-- HIRE / SERVICES -->
+<section id="hire"><div class="wrap">
+  <div class="label">Hire me</div>
+  <h2>Put me on your team, <em>or put me on your problem.</em></h2>
+  <p class="sub">Open to full-time AI engineering and agent-systems roles, and to fixed-scope builds starting this week. Every engagement is done by me, personally.</p>
+  <div class="grid g3">
+    <div class="card hot"><span class="tag t-gold">Full-time / contract</span><h3>Join your team</h3><div class="price">Let's talk</div><p>Local inference, CUDA and quantization, agent harnesses, multi-agent orchestration, shipping product end to end.</p><ul><li>Local LLM serving and optimization</li><li>Agent systems and MCP tooling</li><li>Full-stack ship on Cloudflare</li></ul><a class="btn gold" href="mailto:ceo@abuz8ai.com?subject=Hiring%20Ahmad">Email Ahmad →</a></div>
+    <div class="card"><span class="tag t-green">Core service · 48 hours</span><h3>Project Rescue</h3><div class="price">$1,500</div><p>Your stalled project, autopsied in 48 hours: why it stalled, who owns each fix, and what to do first.</p><ul><li>Fixed scope, one-time price</li><li>Delivered by the operator</li><li>Written action plan</li></ul><a class="btn" href="/rescue">Start the rescue →</a></div>
+    <div class="card"><span class="tag t-blue">Two weeks</span><h3>Build Sprint</h3><div class="price">$4,800</div><p>A working agentic product in 14 days — harness, checkout and deploy — shipped with proof.</p><ul><li>Agent harness + tooling</li><li>Stripe checkout wired</li><li>Live deploy + handoff</li></ul><a class="btn" href="mailto:ceo@abuz8ai.com?subject=Build%20Sprint">Book the sprint →</a></div>
+  </div>
+</div></section>
+
+<!-- EXISTING SITE: PILLARS -->
+<section id="pillars"><div class="wrap">
+  <div class="label">Four ways in</div>
+  <h2>The pillars of <em>abuz8ai.com.</em></h2>
+  <p class="sub">Everything on this site is one of four things: a free tool, a product, an agent resource, or a local-model guide. Every page is labeled honestly — LIVE, EARLY ACCESS, or ROADMAP.</p>
+  <div class="grid g4 hubs">
+    <a class="card" href="/tools.html"><div class="ic">🧰</div><span class="tag t-green">Free</span><h3>Free Tools</h3><p>159 tool pages — JSON formatter, regex tester, SEO generators, hash and UUID utilities — 100% in your browser.</p><span class="more">Open the tools →</span></a>
+    <a class="card" href="/store.html"><div class="ic">🛒</div><span class="tag t-gold">Live</span><h3>Store</h3><p>Execution-verified digital products with Stripe-hosted checkout. Listings that failed our delivery audit were removed.</p><span class="more">Shop the store →</span></a>
+    <a class="card" href="/agents.html"><div class="ic">🤖</div><span class="tag t-blue">Early access</span><h3>Agents</h3><p>Live star boards for 20 open-source agent frameworks, credited to their authors, plus deploy guides.</p><span class="more">Enter the hub →</span></a>
+    <a class="card" href="/models.html"><div class="ic">🧠</div><span class="tag t-green">Live</span><h3>Models</h3><p>Run AI locally: Ollama, llama.cpp, GGUF quantization, and what really fits on consumer GPUs.</p><span class="more">Read the guides →</span></a>
+  </div>
+</div></section>
+
+<!-- STORE TIERS -->
+<section id="store"><div class="wrap">
+  <div class="label">Real products, real prices</div>
+  <h2>What the store <em>sells.</em></h2>
+  <p class="sub">Instant download, Stripe-hosted checkout, tested before it's sold. Card data is entered on stripe.com — we never see or store it.</p>
+  <div class="grid g3">
+    <div class="card"><span class="tag t-green">Live</span><h3>Quick Guides</h3><div class="price">$19–$27</div><ul><li>Single-topic guides and playbooks</li><li>Instant download after checkout</li><li>Tested before it's sold</li></ul><a class="btn" href="/store.html">See the guides</a></div>
+    <div class="card"><span class="tag t-green">Live</span><h3>Workflow Bundles</h3><div class="price">$37–$47</div><ul><li>Multi-workflow kits and toolkits</li><li>Includes verified ComfyUI workflows</li><li>Tested before it's sold</li></ul><a class="btn" href="/store.html">See the bundles</a></div>
+    <div class="card hot"><span class="tag t-gold">Flagship</span><h3>Flagship Systems</h3><div class="price">$97</div><ul><li>Complete production systems</li><li>One-time, no subscription</li><li>Tested before it's sold</li></ul><a class="btn gold" href="/store.html">See the flagships</a></div>
+  </div>
+</div></section>
+
+<!-- EXISTING SITE: HUBS -->
+<section id="hubs"><div class="wrap">
+  <div class="label">Explore</div>
+  <h2>The <em>hubs.</em></h2>
+  <p class="sub">Live feeds, transparency pages, and the mission itself.</p>
+  <div class="grid g3 hubs">
+    <a class="card" href="/mecha-suit.html"><div class="ic">⚙️</div><h3>Mecha-Suit AI Workforce</h3><p>3D service blueprint: private agent routing, AEO, B2B rescue, AI commercials.</p></a>
+    <a class="card" href="/news.html"><div class="ic">📰</div><h3>AI News</h3><p>What matters in AI, without the hype.</p></a>
+    <a class="card" href="/huggingface.html"><div class="ic">🤗</div><h3>Hugging Face Hub</h3><p>Trending models, datasets and spaces with an honest offline fallback.</p></a>
+    <a class="card" href="/github.html"><div class="ic">🐙</div><h3>GitHub Hub</h3><p>Trending boards and agent star charts, credited to authors.</p></a>
+    <a class="card" href="/sovereign.html"><div class="ic">🏛️</div><h3>Sovereign AI</h3><p>AI you run on your own hardware, with no cloud lock-in.</p></a>
+    <a class="card" href="/roadmap.html"><div class="ic">🗺️</div><h3>Roadmap</h3><p>What's live, what's early access, what's still planned.</p></a>
+    <a class="card" href="/journey.html"><div class="ic">📈</div><h3>Journey and Goals</h3><p>Building in public since Day 0 — 2026-03-25.</p></a>
+    <a class="card" href="/audit.html"><div class="ic">🔍</div><h3>Audit and Transparency</h3><p>We audit our own site and publish what we find.</p></a>
+    <a class="card" href="/polymarket.html"><div class="ic">🎯</div><h3>Polymarket Tester</h3><p>Read-only market data and a paper-trading simulator. No real money.</p></a>
+  </div>
+</div></section>
+
+<!-- WHY SOVEREIGN -->
+<section style="text-align:center"><div class="wrap">
+  <div class="label">Why sovereign?</div>
+  <h2>AI you rent can be taken away.<br><em>AI you run is yours.</em></h2>
+  <p class="sub" style="margin:0 auto 2rem">Models on your own hardware, your data on your own disk, and no cloud that can change the rules on you. That is what we build, document and test — in public, since 2026-03-25.</p>
+  <div class="btns" style="justify-content:center"><a class="btn" href="/sovereign.html">Read the mission</a><a class="btn" href="/tools.html">Try a free tool</a><a class="btn" href="/journey.html">Follow the journey</a></div>
+</div></section>
+
+<!-- ABOUT -->
+<section id="about"><div class="wrap about">
+  <div class="portrait"><div class="mono">ع</div><b>Ahmad A M Odeh</b><span>Founder · ABUZ8 LLC · Dayton, Ohio</span></div>
+  <div>
+    <div class="label">About</div>
+    <h2>Hi, I'm Ahmad. <em>I finish what doesn't exist yet.</em></h2>
+    <p style="color:var(--muted);margin-bottom:1rem">I'm a solo founder who got obsessed with owning intelligence instead of renting it. I wrote CUDA kernels to fit a 380-billion-parameter model onto one consumer GPU, built an agent operating system and a 101-agent company simulation, and run a ten-agent team — Claude, ChatGPT, Grok, Kimi, Gemini and my own local brains — every day.</p>
+    <p style="color:var(--muted)">I hold myself to one rule, the Isnad method: nothing is "done" until it's proven on disk. That's why every number on this page has a source.</p>
+    <div class="timeline">
+      <div><b>Mar 25, 2026</b> — Day 0. abuz8ai.com goes live.</div>
+      <div><b>Jul 25</b> — FAIE kernel proven: GLM-5.2 380.9B at 32.03 tok/s on one 5090.</div>
+      <div><b>Aug 18</b> — The Brain Tournament: six-brain fleet measured head to head.</div>
+      <div><b>Aug–Sep</b> — ABUZ8 OS v2.65, AI CMO, Dealerspace, OpenClaw PR, ABUZ8 Town.</div>
+      <div><b>Sep 30</b> — ABUZ8 RIG ships: always-on opportunity agents at $0 token cost.</div>
+      <div><b>Next</b> — first desalination and re-greening pilot, funded by the work.</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section id="contact"><div class="wrap contact">
+  <div>
+    <div class="label">Contact</div>
+    <h2>Recruiting, a build, <em>or the mission?</em></h2>
+    <p style="color:var(--muted)">I read every message and reply within 24 hours. If you're hiring for AI engineering or agent systems, put "Hiring" in the topic and you'll hear back first.</p>
+    <div class="socials">
+      <a href="mailto:ceo@abuz8ai.com">ceo@abuz8ai.com</a>
+      <a href="https://github.com/abuz8studios-ship-it">GitHub</a>
+      <a href="/huggingface.html">Hugging Face</a>
+      <a href="/journey.html">Build log</a>
+      <a href="/store.html">Store</a>
+    </div>
+  </div>
+  <form onsubmit="event.preventDefault();var f=this;var m='mailto:ceo@abuz8ai.com?subject='+encodeURIComponent('['+f.t.value+'] '+f.n.value)+'&body='+encodeURIComponent(f.m.value+'\n\n— '+f.n.value+' <'+f.e.value+'>');location.href=m;">
+    <input name="n" placeholder="Your name" required>
+    <input name="e" type="email" placeholder="you@company.com" required>
+    <select name="t"><option>Hiring</option><option>Project Rescue</option><option>Build Sprint</option><option>The mission / partnership</option><option>Something else</option></select>
+    <textarea name="m" placeholder="What are you building, and where's it stuck?" required></textarea>
+    <button class="btn gold" type="submit" style="cursor:pointer;font:inherit">Send message →</button>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="foot">
+    <div><div class="logo" style="margin-bottom:.6rem">ABUZ8</div><p>Sovereign AI for everyone. Real tools, local models, no fake claims. Built on real hardware by ABUZ8 LLC, Ohio — for a green Sahara and a home for everyone.</p></div>
+    <div><h4>Platform</h4><a href="/tools.html">Free Tools</a><a href="/store.html">Store</a><a href="/models.html">Models</a><a href="/agents.html">AI Agents</a><a href="/news.html">News</a></div>
+    <div><h4>Mission</h4><a href="/sovereign.html">Sovereign AI</a><a href="/journey.html">Journey</a><a href="/roadmap.html">Roadmap</a><a href="/purpose.html">Purpose</a><a href="/audit.html">Audit</a></div>
+    <div><h4>Hubs</h4><a href="/github.html">GitHub Hub</a><a href="/huggingface.html">Hugging Face Hub</a><a href="/polymarket.html">Polymarket Tester</a><a href="/community.html">Community</a><a href="/education.html">Education</a><a href="/downloads.html">Downloads</a></div>
+    <div><h4>Trust</h4><a href="/security.html">Security</a><a href="/disclaimer.html">Disclaimer</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/refund.html">Refunds</a><a href="/license.html">License</a><a href="/status.html">Status</a></div>
+  </div>
+  <div class="legal"><span>© 2026 ABUZ8 LLC · Ahmad A M Odeh · Dayton, Ohio</span><a href="#top" style="color:var(--gold)">Back to top ↑</a></div>
+</div></footer>
+
+<script>
+(function(){
+  var c=document.getElementById('land');if(!c)return;var x=c.getContext('2d'),W,H,D=Math.min(window.devicePixelRatio||1,2),t=0,trees=[],stars=[];
+  function size(){var r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*D;c.height=H*D;x.setTransform(D,0,0,D,0,0);
+    trees=[];for(var i=0;i<70;i++){trees.push({x:Math.random(),s:.4+Math.random()*.9,d:Math.random()})}
+    stars=[];for(var j=0;j<90;j++){stars.push({x:Math.random()*W,y:Math.random()*H*.55,r:Math.random()*1.1})}}
+  function dune(base,amp,f,ph){x.beginPath();x.moveTo(0,H);for(var i=0;i<=W;i+=8){x.lineTo(i,base+Math.sin(i*f+ph)*amp+Math.sin(i*f*2.3+ph*1.7)*amp*.35)}x.lineTo(W,H);x.closePath()}
+  function frame(){t+=0.0025;var g=(Math.sin(t)+1)/2;
+    x.clearRect(0,0,W,H);
+    var sky=x.createLinearGradient(0,0,0,H);sky.addColorStop(0,'rgba(15,19,24,1)');sky.addColorStop(.6,'rgba(30,28,48,'+(.55)+')');sky.addColorStop(1,'rgba(42,74,107,.35)');x.fillStyle=sky;x.fillRect(0,0,W,H);
+    for(var j=0;j<stars.length;j++){var s=stars[j];x.fillStyle='rgba(226,221,211,'+(.25+.25*Math.sin(t*20+j))+')';x.beginPath();x.arc(s.x,s.y,s.r,0,6.3);x.fill()}
+    x.fillStyle='rgba(200,165,92,.10)';x.beginPath();x.arc(W*.8,H*.32,90,0,6.3);x.fill();x.fillStyle='rgba(200,165,92,.18)';x.beginPath();x.arc(W*.8,H*.32,46,0,6.3);x.fill();
+    function mix(a,b,k){return a.map(function(v,i){return Math.round(v+(b[i]-v)*k)})}
+    var layers=[[.70,22,.006,0,[60,45,28],[30,58,44]],[.78,18,.009,2,[88,64,38],[38,80,56]],[.88,14,.013,4,[118,86,48],[48,104,70]]];
+    layers.forEach(function(L,i){var col=mix(L[4],L[5],Math.min(1,g*1.15));x.fillStyle='rgba('+col.join(',')+','+(.55+i*.15)+')';dune(H*L[0],L[1],L[2],L[3]+t*(1+i));x.fill();
+      trees.forEach(function(tr){if(Math.floor(tr.d*3)!==i)return;var gx=tr.x*W,by=H*L[0]+Math.sin(gx*L[2]+L[3]+t*(1+i))*L[1]+Math.sin(gx*L[2]*2.3+(L[3]+t*(1+i))*1.7)*L[1]*.35;
+        var grow=Math.max(0,Math.min(1,(g*1.4-tr.d*.6)));if(grow<=0)return;var h=(22+i*10)*tr.s*grow;
+        x.strokeStyle='rgba(74,58,40,.9)';x.lineWidth=1.4;x.beginPath();x.moveTo(gx,by+2);x.lineTo(gx,by-h);x.stroke();
+        x.fillStyle='rgba('+(60+i*12)+','+(120+i*18)+','+(84+i*10)+','+(.55+.3*grow)+')';x.beginPath();x.arc(gx,by-h,h*.42,0,6.3);x.fill()})});
+    var v=x.createLinearGradient(0,0,W,0);v.addColorStop(0,'rgba(15,19,24,.92)');v.addColorStop(.55,'rgba(15,19,24,.55)');v.addColorStop(1,'rgba(15,19,24,.15)');x.fillStyle=v;x.fillRect(0,0,W,H);
+    requestAnimationFrame(frame)}
+  size();addEventListener('resize',size);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)frame();else{t=1.2;frame=function(){};}
+})();
+</script>
+</body>
+</html>

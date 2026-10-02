@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ABUZ8 RIG</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F1318;--card:#161B22;--line:rgba(200,165,92,.13);--gold:#C8A55C;--green:#3D6B52;--blue:#2A4A6B;--purple:#2E2550;--red:#7a3a3a;--t1:#E2DDD3;--t2:#8A8478}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:linear-gradient(160deg,#0F1318 0,#10151c 900px,#12131d 2000px);color:var(--t1);font:14px/1.5 "DM Sans",system-ui,sans-serif}
+header{display:flex;align-items:baseline;gap:18px;padding:18px 22px 10px;border-bottom:1px solid var(--line)}
+h1{font:700 26px "Playfair Display",Georgia,serif;color:var(--gold);margin:0}
+.muted{color:var(--t2);font-size:12px}
+.grid{display:grid;grid-template-columns:230px 1fr 380px;gap:16px;padding:16px 22px;height:calc(100% - 64px)}
+@media(max-width:1100px){.grid{grid-template-columns:1fr;height:auto}}
+.col{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;overflow:auto;min-height:0}
+h2{font:700 17px "Playfair Display",serif;margin:0 0 10px;color:var(--t1)}
+.seat{padding:9px 10px;border-radius:8px;margin-bottom:6px;background:#12171e;border:1px solid var(--line)}
+.seat b{display:flex;align-items:center;gap:8px}.dot{width:8px;height:8px;border-radius:50%;background:#444}
+.dot.working{background:var(--gold);box-shadow:0 0 8px var(--gold)}.dot.idle{background:var(--green)}.dot.off{background:#444}
+.sig{display:grid;grid-template-columns:54px 1fr;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line)}
+.score{font:700 30px "Playfair Display",serif;color:var(--gold);text-align:right;line-height:1}
+.score.mid{color:#a8925f}.score.low{color:var(--t2)}
+.sig a{color:var(--t1);font-weight:600;text-decoration:none}.sig a:hover{color:var(--gold)}
+.act{margin:4px 0;color:#cfc8b9}.meta{color:var(--t2);font-size:12px}
+.sum{white-space:pre-wrap;color:var(--t2);font-size:12.5px;margin-top:4px;max-height:0;overflow:hidden}.sig.open .sum{max-height:400px}
+button,select,textarea{font:inherit;color:var(--t1);background:#12171e;border:1px solid var(--line);border-radius:7px;padding:5px 10px;cursor:pointer}
+button:hover{border-color:var(--gold)}button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.btns{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.task{padding:9px 10px;border-radius:8px;margin-bottom:6px;border-left:3px solid #444;background:#12171e}
+.task.todo{border-color:var(--blue)}.task.doing,.task.sent{border-color:var(--gold)}.task.done{border-color:var(--green)}.task.failed{border-color:var(--red)}
+pre{white-space:pre-wrap;font-size:12px;color:var(--t2);max-height:220px;overflow:auto;margin:6px 0 0}
+textarea{width:100%;min-height:70px;cursor:text}
+.tabs{display:flex;gap:6px;margin-bottom:8px}.tabs button.on{border-color:var(--gold);color:var(--gold)}
+.empty{color:var(--t2);padding:20px 4px}
+</style></head><body>
+<header><h1>ABUZ8 Rig</h1><span class="muted" id="brain"></span><span class="muted" style="margin-left:auto" id="clock"></span></header>
+<div class="grid">
+  <div class="col"><h2>Team</h2><div id="seats"></div>
+    <p class="muted" style="margin-top:14px">Signal and YouTube agents run on your local brain. Seats run tasks addressed to them. Nothing gets sent or bought without you.</p></div>
+  <div class="col"><h2>Signals</h2>
+    <div class="tabs"><button data-f="new" class="on">New</button><button data-f="kept">Kept</button><button data-f="all">All</button></div>
+    <div id="signals"></div></div>
+  <div class="col"><h2>Tasks</h2>
+    <textarea id="tt" placeholder="Give the team a task. Example: deploy analyzer to analyzer.abuz8ai.com and curl it until it returns 200"></textarea>
+    <div class="btns"><select id="ts"></select><button id="add">Add task</button></div>
+    <div id="tasks" style="margin-top:12px"></div></div>
+</div>
+<script>
+let S={signals:[],tasks:[],seats:[]},F='new';const $=id=>document.getElementById(id);
+const esc=s=>(s??'').toString().replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+async function post(p,b){await fetch(p,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});load()}
+async function load(){try{S=await (await fetch('/api/state')).json()}catch(e){$('brain').textContent='Rig is not running. Start RUN_RIG.bat.';return}draw()}
+function draw(){
+  $('brain').textContent='Brain: '+(S.brain||'none running, keyword mode');$('clock').textContent=new Date().toLocaleTimeString();
+  $('seats').innerHTML=S.seats.map(s=>`<div class="seat"><b><span class="dot ${s.enabled?(s.status||'off'):'off'}"></span>${esc(s.name)}</b><div class="muted">${esc(s.kind)} · ${s.enabled?(s.status||'off'):'disabled in rig.json'}${s.last_run?' · ran '+new Date(s.last_run).toLocaleTimeString():''}</div><div class="muted">${esc(s.last_msg||'')}</div></div>`).join('');
+  const seats=S.seats.filter(s=>(s.kind==='cli'||s.kind==='openrig')&&s.enabled);const cur=$('ts').value;
+  $('ts').innerHTML='<option value="">any free seat</option>'+seats.map(s=>`<option ${s.name===cur?'selected':''}>${esc(s.name)}</option>`).join('');
+  const sg=S.signals.filter(s=>F==='all'||s.status===F);
+  $('signals').innerHTML=sg.length?sg.map(s=>`<div class="sig" id="g${s.id}"><div class="score ${s.score>=75?'':s.score>=60?'mid':'low'}">${s.score}</div><div>
+   <a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>
+   <div class="act">${esc(s.action)}</div><div class="meta">${esc(s.source)}${s.money?' · '+esc(s.money):''}${s.deadline?' · due '+esc(s.deadline):''} · ${new Date(s.created).toLocaleDateString()}</div>
+   <div class="sum">${esc(s.summary)}</div>
+   <div class="btns"><button onclick="document.getElementById('g${s.id}').classList.toggle('open')">Details</button>
+   <button onclick="post('/api/task',{text:${esc(JSON.stringify('Act on this opportunity: '+s.title+' '+s.url+' — '+s.action))},signal_id:${s.id}});post('/api/signal',{id:${s.id},status:'kept'})">Make task</button>
+   <button onclick="post('/api/signal',{id:${s.id},status:'kept'})">Keep</button><button onclick="post('/api/signal',{id:${s.id},status:'dismissed'})">Dismiss</button></div></div></div>`).join('')
+   :'<div class="empty">No signals yet. The signal agent scans every hour; the first scan starts when the rig starts.</div>';
+  $('tasks').innerHTML=S.tasks.length?S.tasks.map(t=>`<div class="task ${t.status}"><b>#${t.id}</b> <span class="muted">${esc(t.seat||'unassigned')} · ${t.status}</span><div>${esc(t.text)}</div>
+   ${t.output?`<pre>${esc(t.output.slice(-3000))}</pre>`:''}${t.status==='failed'?`<div class="btns"><button onclick="post('/api/retry',{id:${t.id}})">Retry</button></div>`:''}</div>`).join(''):'<div class="empty">No tasks. Write one above.</div>';
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');F=b.dataset.f;draw()});
+$('add').onclick=()=>{const t=$('tt').value.trim();if(t){post('/api/task',{text:t,seat:$('ts').value});$('tt').value=''}};
+load();setInterval(load,5000);
+</script></body></html>

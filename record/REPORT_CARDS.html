@@ -1,0 +1,566 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ABUZ8 Report Cards</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F1318;--card:#161B22;--line:rgba(200,165,92,.12);--gold:#C8A55C;--green:#3D6B52;--blue:#2A4A6B;--purple:#2E2550;--tx:#E2DDD3;--mut:#8A8478}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;color:var(--tx);
+background:linear-gradient(160deg,#0F1318 0%,#10161c 1400px,#121320 2800px,#0F1318 4200px);min-height:100vh}
+main{max-width:1100px;margin:auto;padding:28px 18px}
+h1{font-family:'Playfair Display',Georgia,serif;color:var(--gold);font-weight:600;margin:0 0 4px}
+.mut{color:var(--mut);font-size:13px}.warn{color:var(--gold)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:20px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.kpi b{display:block;font-size:26px;color:var(--gold);font-family:'Playfair Display',serif}
+.wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px}
+td,th{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}th{color:var(--gold)}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 12px}
+input,button{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:inherit}
+button.on{border-color:var(--gold);color:var(--gold)}input{flex:1;min-width:200px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:10px 0}
+.hd{display:flex;gap:12px;align-items:flex-start}.hd a{color:var(--tx);font-weight:600;text-decoration:none}
+.gr{min-width:34px;height:34px;border-radius:8px;display:grid;place-items:center;font-weight:700;background:#1d232c}
+.gA .gr{background:var(--green)}.gB .gr{background:var(--blue)}.gC .gr{background:#3a3a2a}.gD .gr{background:var(--purple)}.gF .gr{background:#4a2323}
+details summary{cursor:pointer;color:var(--gold);margin-top:6px}ul{margin:4px 0 10px 18px;padding:0}
+</style></head><body><main>
+<h1>ABUZ8 · Report Cards</h1><div class="mut">Generated 2026-09-26 16:48 · what is measured is corrected</div>
+<div class="kpis"><div class="kpi"><b>88</b>chats graded</div><div class="kpi"><b>2.20</b>GPA (A=4 … F=0)</div>
+<div class="kpi"><b>14</b>verified ships</div><div class="kpi"><b>115</b>open loops</div></div>
+<h2 class="mut">By month</h2><div class="wrap"><table><tr><th>Month</th><th>Chats</th><th>GPA</th><th>Grades</th><th>Open loops</th><th>Verified</th></tr><tr><td>2026-09</td><td>48</td><td>2.33</td><td>A:0 B:24 C:16 D:8 F:0</td><td>70</td><td>9</td></tr><tr><td>2026-08</td><td>40</td><td>2.05</td><td>A:0 B:14 C:18 D:4 F:4</td><td>45</td><td>5</td></tr></table></div>
+<div class="bar"><input id="q" placeholder="Search title, project, summary…">
+<button data-f="" class="on">All</button><button data-f="A">A</button><button data-f="B">B</button><button data-f="C">C</button><button data-f="D">D</button><button data-f="F">F</button></div>
+<div id="list"><div class="card gB" data-g="B" data-t="renaming launch-agent to /ahmad skill suite renamed /launch-agent to /ahmad and built a new /finish closer skill wired into all 11 skills. prepared a full github repo bundle but could not push.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/chat/77667f8d-0ece-429d-8e83-119e4b31babd" target="_blank">Renaming launch-agent to /ahmad</a>
+<div class="mut">2026-09-26 · Skill suite · 0 msgs · proof: claimed</div></div></div>
+<p>Renamed /launch-agent to /ahmad and built a new /finish closer skill wired into all 11 skills. Prepared a full GitHub repo bundle but could not push.</p><p class="mut"><i>Real skills packaged, release never landed on GitHub.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>/finish skill</li><li>11 skills updated</li><li>repo bundle with dist/*.skill, README, LICENSE, RELEASE_NOTES</li></ul><b>Decisions</b><ul><li>Workflow: /abuz8ify &lt;path&gt; — finish line: &lt;done means&gt;</li></ul>
+<b class="warn">Open loops</b><ul><li>Push 12 skills to abuz8studios-ship-it (gh auth never confirmed)</li></ul></details></div><div class="card gB" data-g="B" data-t="abuz8 os brain selector fix abuz8 os found two real bugs: loaded local brain not activated as chat target, and setactive() hard-returning backend-missing. patched both with backups and syntax checks.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/chat/0fc8f655-df14-4bea-9250-57c2d7a1538b" target="_blank">ABUZ8 OS brain selector fix</a>
+<div class="mut">2026-09-25 · ABUZ8 OS · 0 msgs · proof: claimed</div></div></div>
+<p>Found two real bugs: loaded local brain not activated as chat target, and setActive() hard-returning BACKEND-MISSING. Patched both with backups and syntax checks.</p><p class="mut"><i>Surgical fix on disk; session ended before the live proof.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>modules/brain.js patch</li><li>renderer/js/api-client.js patch</li><li>_backups_brainfix_20260925_184211</li></ul><b>Decisions</b><ul><li>Fix one system fully before touching the next</li></ul>
+<b class="warn">Open loops</b><ul><li>Restart OS and prove local brain answers /api/chat end-to-end</li></ul></details></div><div class="card gD" data-g="D" data-t="rebuilding qadir from chat history qadir persona asked to rebuild qadir from raw chat history and install chatseek / find-to-skill. session ended while probing pegasus paths.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">Rebuilding Qadir from chat history</a>
+<div class="mut">2026-09-25 · Qadir persona · 0 msgs · proof: none</div></div></div>
+<p>Asked to rebuild Qadir from raw chat history and install chatseek / find-to-skill. Session ended while probing Pegasus paths.</p><p class="mut"><i>Intent captured, nothing produced.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Rebuild Qadir from raw sessions</li><li>Build chatseek + find-to-skill (partly covered by chat-report-cards)</li><li>Fix OS brain selector</li></ul></details></div><div class="card gB" data-g="B" data-t="openrig rig system for abuz8 os abuz8 os built a 10-file, ~1,772-line rig system (seats, pods, apm, refocus, a2a, mcp server, xerox company packages).">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">OpenRig rig system for ABUZ8 OS</a>
+<div class="mut">2026-09-24 · ABUZ8 OS · 0 msgs · proof: claimed · $</div></div></div>
+<p>Built a 10-file, ~1,772-line rig system (seats, pods, APM, refocus, A2A, MCP server, Xerox company packages).</p><p class="mut"><i>Big real artifact, not wired or sold.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li>src/lib/rig/* (10 files)</li><li>abuz8-town.yaml</li><li>3 Xerox templates @ $97</li></ul><b>Decisions</b><ul><li>Build, don&#x27;t plan</li><li>Revenue target: 100 × $97 templates</li></ul>
+<b class="warn">Open loops</b><ul><li>Wire rig into main.js/gateway/team.html</li><li>Run the 5-phase probe</li><li>List Xerox templates for sale</li></ul></details></div><div class="card gB" data-g="B" data-t="reverse engineering ahmad ai → new homepage abuz8ai.com three-way gap analysis vs a competitor, then built a full new homepage and an orchestrator claude.md for pegasus.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Reverse engineering Ahmad AI → new homepage</a>
+<div class="mut">2026-09-24 · abuz8ai.com · 0 msgs · proof: claimed · $</div></div></div>
+<p>Three-way gap analysis vs a competitor, then built a full new homepage and an orchestrator CLAUDE.md for Pegasus.</p><p class="mut"><i>Homepage built, not deployed.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li>New abuz8ai.com homepage</li><li>CLAUDE.md orchestrator brief</li></ul><b>Decisions</b><ul><li>Tiers $0/$39/$149; Rescue $1,500; Sprint $4,800</li><li>$500 budget: signing, API float, reserve</li></ul>
+<b class="warn">Open loops</b><ul><li>Deploy new homepage</li><li>Stripe live (mailto used meanwhile)</li><li>Execute Phase 0 honesty pass</li></ul></details></div><div class="card gB" data-g="B" data-t="abuz8 forge guide (merged) claude mastery guide built abuz8 forge html, then merged the may 12 mastery blueprint into it after being corrected.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">ABUZ8 Forge guide (merged)</a>
+<div class="mut">2026-09-24 · Claude mastery guide · 0 msgs · proof: claimed</div></div></div>
+<p>Built ABUZ8 Forge HTML, then merged the May 12 mastery blueprint into it after being corrected.</p><p class="mut"><i>Complete document; a guide, not a product.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li>ABUZ8 Forge HTML (8 tabs)</li></ul><b>Decisions</b><ul><li>Update canonical files in place</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="muse referral post + audit benchmark x content three x post variants for the muse referral; audit numbers re-verified programmatically (8/2/3 of 13).">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Muse referral post + audit benchmark</a>
+<div class="mut">2026-09-24 · X content · 0 msgs · proof: verified</div></div></div>
+<p>Three X post variants for the Muse referral; audit numbers re-verified programmatically (8/2/3 of 13).</p><p class="mut"><i>Copy only; corrected a fabricated stat.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>3 post variants</li></ul><b>Decisions</b><ul><li>Lead with short version</li></ul>
+<b class="warn">Open loops</b><ul><li>Post it</li></ul></details></div><div class="card gB" data-g="B" data-t="abuzaid vs felix + install readiness abuzaid agent 17 deployment files for abuzaid identity and openclaw setup; felix comparison 71 vs 46.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">AbuZaid vs Felix + install readiness</a>
+<div class="mut">2026-09-24 · AbuZaid agent · 0 msgs · proof: claimed</div></div></div>
+<p>17 deployment files for AbuZaid identity and OpenClaw setup; Felix comparison 71 vs 46.</p><p class="mut"><i>Files built, install not run.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>17 deployment files</li><li>checkpoint doc</li></ul><b>Decisions</b><ul><li>OpenClaw, Sonnet daily, Haiku heartbeats, Telegram, Trust L2</li></ul>
+<b class="warn">Open loops</b><ul><li>Run OpenClaw installation</li></ul></details></div><div class="card gC" data-g="C" data-t="stripe live walkthrough stripe named stripe live mode as the #1 blocker and gave the activation + 3 live prices + deploy steps.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Stripe live walkthrough</a>
+<div class="mut">2026-09-22 · Stripe · 0 msgs · proof: none · $</div></div></div>
+<p>Named Stripe live mode as the #1 blocker and gave the activation + 3 live prices + deploy steps.</p><p class="mut"><i>Correct plan, zero execution.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>Finish existing things before new ones</li></ul>
+<b class="warn">Open loops</b><ul><li>Activate Stripe live on acct_1T9oumP159xWFJdM</li><li>Create 3 live Price objects</li><li>wrangler pages deploy</li></ul></details></div><div class="card gC" data-g="C" data-t="instinct ai valuation vs abuz8 strategy mapped the agent-platform landscape; problem is shipping, not vision. proposed 3 thirty-day mvp lanes.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Instinct AI valuation vs ABUZ8</a>
+<div class="mut">2026-09-22 · Strategy · 0 msgs · proof: none · $</div></div></div>
+<p>Mapped the agent-platform landscape; problem is shipping, not vision. Proposed 3 thirty-day MVP lanes.</p><p class="mut"><i>Research only.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>Narrow to one vertical slice</li></ul>
+<b class="warn">Open loops</b><ul><li>Pick one MVP lane and ship in 30 days</li></ul></details></div><div class="card gD" data-g="D" data-t="ocbi index reply x replies draft reply to ethereagle blocked because the cbi tool is unknown.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">OCBI index reply</a>
+<div class="mut">2026-09-21 · X replies · 0 msgs · proof: none</div></div></div>
+<p>Draft reply to Ethereagle blocked because the cbi tool is unknown.</p><p class="mut"><i>Stalled on missing context.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Identify the cbi tool and send the reply</li></ul></details></div><div class="card gC" data-g="C" data-t="replies to hüseyin örskaya abukaido / x drafted replies on gepa reflective loops vs structural blind spots.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Replies to Hüseyin Örskaya</a>
+<div class="mut">2026-09-21 · AbuKaido / X · 0 msgs · proof: none</div></div></div>
+<p>Drafted replies on GEPA reflective loops vs structural blind spots.</p><p class="mut"><i>Copy only.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>2 reply drafts</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Post the reply</li></ul></details></div><div class="card gC" data-g="C" data-t="site redesign prompt + memory correction abuz8ai.com built a multi-portal redesign prompt with honesty tiers; corrected memory that falsely said geometric research was disproven.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Site redesign prompt + memory correction</a>
+<div class="mut">2026-09-20 · abuz8ai.com · 0 msgs · proof: none</div></div></div>
+<p>Built a multi-portal redesign prompt with honesty tiers; corrected memory that falsely said geometric research was disproven.</p><p class="mut"><i>Prompt, not a site.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li>Redesign prompt for Gemini/Grok/Muse</li></ul><b>Decisions</b><ul><li>Research was under-tested, not killed</li></ul>
+<b class="warn">Open loops</b><ul><li>Run the redesign prompt</li><li>Pick which prior research prompt was meant</li></ul></details></div><div class="card gC" data-g="C" data-t="isnad method reply x content recovered the 5 isnad rules and drafted a reply tweet with the bukhari framing.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Isnad method reply</a>
+<div class="mut">2026-09-20 · X content · 0 msgs · proof: none</div></div></div>
+<p>Recovered the 5 Isnad rules and drafted a reply tweet with the Bukhari framing.</p><p class="mut"><i>Copy only.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>reply tweet</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Post it</li></ul></details></div><div class="card gC" data-g="C" data-t="openclaw pr #152328 status opc-1 verified the submodule pr is open and unreviewed; the 1.2.2 desktop release came from ahmad&#x27;s own repo.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">OpenClaw PR #152328 status</a>
+<div class="mut">2026-09-20 · OPC-1 · 0 msgs · proof: verified</div></div></div>
+<p>Verified the submodule PR is open and unreviewed; the 1.2.2 desktop release came from Ahmad&#x27;s own repo.</p><p class="mut"><i>Accurate status check.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Nudge steipete on #152328</li></ul></details></div><div class="card gB" data-g="B" data-t="memory export for migration memory full nine-section memory export for another assistant.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Memory export for migration</a>
+<div class="mut">2026-09-20 · Memory · 0 msgs · proof: claimed</div></div></div>
+<p>Full nine-section memory export for another assistant.</p><p class="mut"><i>Delivered as asked.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li>structured memory export</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gB" data-g="B" data-t="ahmad-1 tonight training plan ahmad-1 located the 7-packet architecture chat and wrote an executable qwen3-0.6b grpo plan with scripts.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">AHMAD-1 tonight training plan</a>
+<div class="mut">2026-09-19 · AHMAD-1 · 0 msgs · proof: claimed</div></div></div>
+<p>Located the 7-packet architecture chat and wrote an executable Qwen3-0.6B GRPO plan with scripts.</p><p class="mut"><i>Plan with code; no run.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>AHMAD1_TONIGHT_TRAINING_PLAN.md (published)</li></ul><b>Decisions</b><ul><li>Tier 1 Qwen3-0.6B-Base, Tier 2 Qwen3-4B</li></ul>
+<b class="warn">Open loops</b><ul><li>Run the training</li></ul></details></div><div class="card gD" data-g="D" data-t="emergent code export ai-command-center explained connectors are mcp server-side; code export never happened.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">Emergent code export</a>
+<div class="mut">2026-09-19 · ai-command-center · 0 msgs · proof: none</div></div></div>
+<p>Explained connectors are MCP server-side; code export never happened.</p><p class="mut"><i>Blocked on export.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Export Emergent code</li><li>Rebuild + deploy to abuz8ai.com</li></ul></details></div><div class="card gB" data-g="B" data-t="opc-1 → openclaw submodule opc-1 confirmed submodule is right and wrote a copy-paste migration guide to v1.3.0.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/chat/dc56529a-2cbc-44f5-bf53-6fe7767a2b50" target="_blank">OPC-1 → OpenClaw submodule</a>
+<div class="mut">2026-09-18 · OPC-1 · 0 msgs · proof: claimed</div></div></div>
+<p>Confirmed submodule is right and wrote a copy-paste migration guide to v1.3.0.</p><p class="mut"><i>Artifact; executed later.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>migration guide .md</li></ul><b>Decisions</b><ul><li>Submodule over fork</li></ul>
+<b class="warn">Open loops</b><ul><li>Execute on Pegasus (closed next day: PR #152328)</li></ul></details></div><div class="card gB" data-g="B" data-t="ahmad-1 corporate docs ahmad-1 disk probe corrected stale memory; wrote 5 corporate docs (readme, prd, goal_sheet, do_not_do, file_map).">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/chat/3577195b-6650-40a6-b02a-552ea61bd898" target="_blank">AHMAD-1 corporate docs</a>
+<div class="mut">2026-09-18 · AHMAD-1 · 0 msgs · proof: claimed</div></div></div>
+<p>Disk probe corrected stale memory; wrote 5 corporate docs (README, PRD, GOAL_SHEET, DO_NOT_DO, FILE_MAP).</p><p class="mut"><i>Docs on disk, no model progress.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li>E:\ABU\02_PROJECTS\AHMAD-1\CORPORATE_DOCS\ (5 files)</li></ul><b>Decisions</b><ul><li>Fuse CAMeL Tools/Qalsadi, don&#x27;t reinvent</li><li>Don&#x27;t overchange the architecture</li></ul>
+<b class="warn">Open loops</b><ul><li>Build /distill command</li><li>Execute the 8 ordered tasks</li></ul></details></div><div class="card gD" data-g="D" data-t="open website folder abuz8ai.com no pegasus access in that session; offered alternatives.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">Open website folder</a>
+<div class="mut">2026-09-18 · abuz8ai.com · 0 msgs · proof: none</div></div></div>
+<p>No Pegasus access in that session; offered alternatives.</p><p class="mut"><i>Access limit, nothing done.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Open the site folder from a Pegasus-attached session</li></ul></details></div><div class="card gC" data-g="C" data-t="recovering job hunter docs recovery lost docs not found in uploads or history; surfaced 3 open hackathons.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Recovering job hunter docs</a>
+<div class="mut">2026-09-18 · Recovery · 0 msgs · proof: none · $</div></div></div>
+<p>Lost docs not found in uploads or history; surfaced 3 open hackathons.</p><p class="mut"><i>Research only.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>80% build coverage before entering a hackathon</li></ul>
+<b class="warn">Open loops</b><ul><li>Search Pegasus for job-hunter / million-dollar-plays docs</li><li>Mark ProofLoop killed or submitted</li></ul></details></div><div class="card gB" data-g="B" data-t="verify opc-1 github upload opc-1 wrote opc1_verify.sh plus docs for claude code to verify the release.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Verify OPC-1 GitHub upload</a>
+<div class="mut">2026-09-18 · OPC-1 · 0 msgs · proof: claimed</div></div></div>
+<p>Wrote opc1_verify.sh plus docs for Claude Code to verify the release.</p><p class="mut"><i>Script built, not run.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>opc1_verify.sh</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Run the verify script and read the report</li></ul></details></div><div class="card gB" data-g="B" data-t="qadir_core agent handoff qadir_core found the frontend was rebuilt 5 times and the best build (index4, 413kb) was regressed. wrote agent_handoff.md on disk.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">QADIR_CORE agent handoff</a>
+<div class="mut">2026-09-18 · QADIR_CORE · 0 msgs · proof: verified</div></div></div>
+<p>Found the frontend was rebuilt 5 times and the best build (index4, 413KB) was regressed. Wrote AGENT_HANDOFF.md on disk.</p><p class="mut"><i>Right diagnosis, on disk.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li>E:\ABU\QADIR_CORE\AGENT_HANDOFF.md</li></ul><b>Decisions</b><ul><li>Promote index4, no rebuilds, Electron locked</li></ul>
+<b class="warn">Open loops</b><ul><li>Promote index4 frontend + rewire routes</li><li>Rebuild installer</li></ul></details></div><div class="card gC" data-g="C" data-t="modelscope overview research overview of modelscope vs hugging face.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">ModelScope overview</a>
+<div class="mut">2026-09-18 · Research · 0 msgs · proof: none</div></div></div>
+<p>Overview of ModelScope vs Hugging Face.</p><p class="mut"><i>Info only.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gB" data-g="B" data-t="sovereign path → abuz8-superbrain ahmad-1 chose the sovereign path; fused three brain projects under one name; created the project dir and claude.md.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Sovereign path → ABUZ8-SUPERBRAIN</a>
+<div class="mut">2026-09-18 · AHMAD-1 · 0 msgs · proof: claimed · $</div></div></div>
+<p>Chose the sovereign path; fused three brain projects under one name; created the project dir and CLAUDE.md.</p><p class="mut"><i>Structure, not code.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li>E:\ABU\02_PROJECTS\ABUZ8-SUPERBRAIN\CLAUDE.md</li></ul><b>Decisions</b><ul><li>Sovereign over marketplace</li><li>One brain, four layers</li></ul>
+<b class="warn">Open loops</b><ul><li>Build arabic_root.py</li><li>Decide Layer 3 backbone</li></ul></details></div><div class="card gB" data-g="B" data-t="builder fest idea → timeline app timeline / emergent built two timeline/mission-control prototypes, then noticed it was build #24 of the same app. drafted emergent submission prompt.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Builder Fest idea → timeline app</a>
+<div class="mut">2026-09-17 · Timeline / Emergent · 0 msgs · proof: claimed · $</div></div></div>
+<p>Built two timeline/mission-control prototypes, then noticed it was build #24 of the same app. Drafted Emergent submission prompt.</p><p class="mut"><i>Artifact; the rebuild pattern is the lesson.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>2 HTML prototypes</li><li>Emergent submission prompt</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Submit to Builder Fest by Sep 20 (outcome unknown)</li></ul></details></div><div class="card gB" data-g="B" data-t="7-agent analyzer + site audit abuz8ai.com built deploy configs and audit_abuz8.py; ran it on mock data (39/100).">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">7-agent analyzer + site audit</a>
+<div class="mut">2026-09-17 · abuz8ai.com · 0 msgs · proof: claimed · $</div></div></div>
+<p>Built deploy configs and audit_abuz8.py; ran it on MOCK data (39/100).</p><p class="mut"><i>Score came from mock data.</i></p>
+<details><summary>Built / Decisions / Open loops (4)</summary>
+<b>Built</b><ul><li>vercel.json</li><li>package.json</li><li>DEPLOY_NOW.md</li><li>audit_abuz8.py</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Deploy analyzer</li><li>Run real (non-mock) audit</li><li>Stripe live</li><li>Submit sitemap to Search Console</li></ul></details></div><div class="card gD" data-g="D" data-t="agent bundler state agent bundler status read only; p0 packer salvage still the blocker.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">Agent bundler state</a>
+<div class="mut">2026-09-17 · Agent Bundler · 0 msgs · proof: none</div></div></div>
+<p>Status read only; P0 packer salvage still the blocker.</p><p class="mut"><i>No movement.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>P0: wire pack.exe from F:\ABUZ8_Test\portable-9b\builder</li></ul></details></div><div class="card gB" data-g="B" data-t="faie vision + what&#x27;s shippable qadir_core honest verdict: collatz/sac-functor work isn&#x27;t math; brain project is 6-8 weeks old. chose qadir core as most sellable; wrote a packaging handoff.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">FAIE vision + what&#x27;s shippable</a>
+<div class="mut">2026-09-17 · QADIR_CORE · 0 msgs · proof: claimed · $</div></div></div>
+<p>Honest verdict: Collatz/SAC-Functor work isn&#x27;t math; brain project is 6-8 weeks old. Chose Qadir Core as most sellable; wrote a packaging handoff.</p><p class="mut"><i>Good call, not executed.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>Qadir Core packaging handoff</li></ul><b>Decisions</b><ul><li>Qadir Core is the sellable one</li></ul>
+<b class="warn">Open loops</b><ul><li>Package Qadir Core as double-click installer</li></ul></details></div><div class="card gC" data-g="C" data-t="agent platforms + os comparison research research on platforms/app builders and an os architecture comparison html.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Agent platforms + OS comparison</a>
+<div class="mut">2026-09-17 · Research · 0 msgs · proof: none</div></div></div>
+<p>Research on platforms/app builders and an OS architecture comparison HTML.</p><p class="mut"><i>Research artifact.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li>os_architecture_comparison.html</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gB" data-g="B" data-t="amanecer one-man-company installer amanecer built a six-file constitution plus sh/ps1 installers; robinhood isolated with per-session confirm.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Amanecer one-man-company installer</a>
+<div class="mut">2026-09-17 · Amanecer · 0 msgs · proof: claimed · $</div></div></div>
+<p>Built a six-file constitution plus sh/ps1 installers; Robinhood isolated with per-session confirm.</p><p class="mut"><i>Real package, not run.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>SOUL/AGENTS/USER/TOOLS/HEARTBEAT/ROBINHOOD.md</li><li>install.sh</li><li>install.ps1</li><li>zip</li></ul><b>Decisions</b><ul><li>Robinhood isolated</li><li>Sell gate scoped to approved surfaces</li></ul>
+<b class="warn">Open loops</b><ul><li>Install and run it</li></ul></details></div><div class="card gB" data-g="B" data-t="history metrics from disk metrics parsed the claude code corpus: 2,366 sessions, 60,363 exchanges, ~7.09b tokens. wrote a parser for the web export.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">History metrics from disk</a>
+<div class="mut">2026-09-16 · Metrics · 0 msgs · proof: verified</div></div></div>
+<p>Parsed the Claude Code corpus: 2,366 sessions, 60,363 exchanges, ~7.09B tokens. Wrote a parser for the web export.</p><p class="mut"><i>Real numbers from disk.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li>C:\Users\wirec\abuz8_audit.py</li><li>C:\Users\wirec\abuz8_web_audit.py</li></ul><b>Decisions</b><ul><li>Web history needs the data export</li></ul>
+<b class="warn">Open loops</b><ul><li>Run web export through parser</li><li>Finish E:\ABU code census</li></ul></details></div><div class="card gD" data-g="D" data-t="hermes reinstall hermes mcp servers timed out; gave known bundle paths.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">Hermes reinstall</a>
+<div class="mut">2026-09-15 · Hermes · 0 msgs · proof: none</div></div></div>
+<p>MCP servers timed out; gave known bundle paths.</p><p class="mut"><i>Blocked.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>Claude is orchestrator of Kimi/Muse team</li></ul>
+<b class="warn">Open loops</b><ul><li>Restore MCP bridge and locate bundle</li></ul></details></div><div class="card gC" data-g="C" data-t="account history reach memory found search reaches only to ~may 23; advised restoring structured memory.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Account history reach</a>
+<div class="mut">2026-09-15 · Memory · 0 msgs · proof: none</div></div></div>
+<p>Found search reaches only to ~May 23; advised restoring structured memory.</p><p class="mut"><i>Diagnosis only.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Paste original structured memory</li></ul></details></div><div class="card gD" data-g="D" data-t="total conversation count memory couldn&#x27;t count chats; corrected to state limits plainly.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">Total conversation count</a>
+<div class="mut">2026-09-15 · Memory · 0 msgs · proof: none</div></div></div>
+<p>Couldn&#x27;t count chats; corrected to state limits plainly.</p><p class="mut"><i>No answer possible.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>State limitations up front</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="history after subscription lapse memory explained data isn&#x27;t deleted; export path and jsonl location.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">History after subscription lapse</a>
+<div class="mut">2026-09-15 · Memory · 0 msgs · proof: none</div></div></div>
+<p>Explained data isn&#x27;t deleted; export path and JSONL location.</p><p class="mut"><i>Guidance only.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Run the claude.ai data export</li></ul></details></div><div class="card gB" data-g="B" data-t="desktop config + master brief qadir_core rewrote desktop config, wrote ahmad-1 claude.md/build_status, master brief; probes confirmed brain 8900 is down.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Desktop config + master brief</a>
+<div class="mut">2026-09-14 · QADIR_CORE · 0 msgs · proof: verified</div></div></div>
+<p>Rewrote Desktop config, wrote AHMAD-1 CLAUDE.md/BUILD_STATUS, master brief; probes confirmed brain 8900 is down.</p><p class="mut"><i>Probed truth; brain still down.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li>claude_desktop_config.json</li><li>AHMAD-1 CLAUDE.md + BUILD_STATUS.md</li><li>ABUZ8_AGENT_MASTER_BRIEF.md</li></ul><b>Decisions</b><ul><li>No blind keyword-delete of config</li></ul>
+<b class="warn">Open loops</b><ul><li>Bring QADIR_CORE brain on 8900 back up</li><li>Extract MUTHALLATH zip</li></ul></details></div><div class="card gC" data-g="C" data-t="unclaimed credits + nim credits inbox check disproved the &#x27;money left on table&#x27; list; nim→desktop mcp setup explained.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Unclaimed credits + NIM</a>
+<div class="mut">2026-09-04 · Credits · 0 msgs · proof: verified</div></div></div>
+<p>Inbox check disproved the &#x27;money left on table&#x27; list; NIM→Desktop MCP setup explained.</p><p class="mut"><i>Honest negative result.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Claim real credits (Copilot, xAI signup)</li><li>Wire NIM as MCP</li></ul></details></div><div class="card gB" data-g="B" data-t="treg skill skills packaged upstream treg skill.md as treg-skill.zip.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">treg skill</a>
+<div class="mut">2026-09-03 · Skills · 0 msgs · proof: claimed</div></div></div>
+<p>Packaged upstream treg SKILL.md as treg-skill.zip.</p><p class="mut"><i>Packaged, not installed.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>treg-skill.zip</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Install locally (MCP timed out)</li></ul></details></div><div class="card gC" data-g="C" data-t="file inventory — 7 generations inventory found 7 prior versions; prescribed reviving gen 7 with a stable path and refresh command.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">File inventory — 7 generations</a>
+<div class="mut">2026-09-03 · Inventory · 0 msgs · proof: verified</div></div></div>
+<p>Found 7 prior versions; prescribed reviving gen 7 with a stable path and refresh command.</p><p class="mut"><i>Correct diagnosis, fix not applied.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>Revive, don&#x27;t rebuild</li></ul>
+<b class="warn">Open loops</b><ul><li>Create E:\ABU\_INVENTORY\CURRENT + refresh cmd + shortcut</li></ul></details></div><div class="card gB" data-g="B" data-t="lotvue login fix + playbook lotvue360 replaced google-only oauth with email/password and deployed via wrangler; built a survival playbook.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">LotVue login fix + playbook</a>
+<div class="mut">2026-09-03 · LotVue360 · 0 msgs · proof: claimed · $</div></div></div>
+<p>Replaced Google-only OAuth with email/password and deployed via wrangler; built a survival playbook.</p><p class="mut"><i>Deployed, login never proven.</i></p>
+<details><summary>Built / Decisions / Open loops (4)</summary>
+<b>Built</b><ul><li>AuthContext.jsx</li><li>Login.jsx</li><li>main.jsx</li><li>wrangler deploy lotvue360</li><li>playbook React artifact</li></ul><b>Decisions</b><ul><li>Client-side auth OK for demo only</li></ul>
+<b class="warn">Open loops</b><ul><li>Verify login live</li><li>Call Mohammed re: Bob demo</li><li>Stripe live</li><li>Backend auth before customers</li></ul></details></div><div class="card gB" data-g="B" data-t="abuz8 os vs openclaw/hermes abuz8 os disk-verified comparison table; named 3 gaps to shippable.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">ABUZ8 OS vs OpenClaw/Hermes</a>
+<div class="mut">2026-09-03 · ABUZ8 OS · 0 msgs · proof: verified</div></div></div>
+<p>Disk-verified comparison table; named 3 gaps to shippable.</p><p class="mut"><i>Honest comparison.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li>comparison HTML</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Telegram→agent loop E2E</li><li>memory.recall before infer</li><li>Sign AHMAD_WORLDVIEW.md</li></ul></details></div><div class="card gB" data-g="B" data-t="audit of 19 html files organization read 19 files (~15k lines); 6 canonical, 11 archive. hackathon missed.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Audit of 19 HTML files</a>
+<div class="mut">2026-09-03 · Organization · 0 msgs · proof: verified · $</div></div></div>
+<p>Read 19 files (~15k lines); 6 canonical, 11 archive. Hackathon missed.</p><p class="mut"><i>Real audit.</i></p>
+<details><summary>Built / Decisions / Open loops (4)</summary>
+<b>Built</b><ul><li>ABUZ8_AUDIT_TABLE.md</li></ul><b>Decisions</b><ul><li>No new HTML dashboards ever</li></ul>
+<b class="warn">Open loops</b><ul><li>Recover ABU LIFE from Life OS</li><li>Decide NEOCORTEX</li><li>LotVue credential reset</li><li>Stripe live</li></ul></details></div><div class="card gC" data-g="C" data-t="autonomous loop fusion prompt abuz8 os three prompt iterations fused into one claude code prompt for g1-g3 proofs.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Autonomous loop fusion prompt</a>
+<div class="mut">2026-09-03 · ABUZ8 OS · 0 msgs · proof: none</div></div></div>
+<p>Three prompt iterations fused into one Claude Code prompt for G1-G3 proofs.</p><p class="mut"><i>Prompt only.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>fusion prompt</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Run it and prove G1-G3</li></ul></details></div><div class="card gC" data-g="C" data-t="local models for 5090s content factory ranked 20 models; ltx-2.5 is the video upgrade; h3 license excludes us.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Local models for 5090s</a>
+<div class="mut">2026-09-02 · Content Factory · 0 msgs · proof: none</div></div></div>
+<p>Ranked 20 models; LTX-2.5 is the video upgrade; H3 license excludes US.</p><p class="mut"><i>Research.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>LTX-2.5 primary video engine</li></ul>
+<b class="warn">Open loops</b><ul><li>Download LTX-2.5 into ComfyUI</li></ul></details></div><div class="card gB" data-g="B" data-t="memory export html memory exported memory as text and styled html.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Memory export HTML</a>
+<div class="mut">2026-09-02 · Memory · 0 msgs · proof: claimed</div></div></div>
+<p>Exported memory as text and styled HTML.</p><p class="mut"><i>Delivered.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li>memory_export.html</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gD" data-g="D" data-t="369-agent town sizing agt moe sizing discussion; hub-and-spoke proposal. needed code shared.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">369-agent town sizing</a>
+<div class="mut">2026-09-01 · AGT · 0 msgs · proof: none</div></div></div>
+<p>MoE sizing discussion; hub-and-spoke proposal. Needed code shared.</p><p class="mut"><i>Talk.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Share AGT/muthallath code</li></ul></details></div><div class="card gF" data-g="F" data-t="find best claude.md loop agent loop unscoped scan starved all mcp servers; nothing read.">
+<div class="hd"><span class="gr">F</span><div><a href="https://claude.ai/recents" target="_blank">Find best CLAUDE.md loop</a>
+<div class="mut">2026-08-31 · Agent loop · 0 msgs · proof: none</div></div></div>
+<p>Unscoped scan starved all MCP servers; nothing read.</p><p class="mut"><i>Went nowhere.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Rescan with depth + exclusions</li></ul></details></div><div class="card gB" data-g="B" data-t="qadir_core doctrine qadir seven doctrine files (kise/kiss/med/80-20/roi/kill). ended with an infected cat bite — medical first.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">QADIR_CORE doctrine</a>
+<div class="mut">2026-08-31 · Qadir · 0 msgs · proof: claimed</div></div></div>
+<p>Seven doctrine files (KISE/KISS/MED/80-20/ROI/KILL). Ended with an infected cat bite — medical first.</p><p class="mut"><i>Docs only.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>7 QADIR_CORE doctrine files</li></ul><b>Decisions</b><ul><li>Update memory in place</li></ul>
+<b class="warn">Open loops</b><ul><li>Copy files to E:\ABU\02_PROJECTS\QADIR_CORE</li></ul></details></div><div class="card gB" data-g="B" data-t="forensic recap + ai cmo saas ai cmo built abuz8_brain archive and a cinematic 8-agent ai cmo saas artifact.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Forensic recap + AI CMO SaaS</a>
+<div class="mut">2026-08-31 · AI CMO · 0 msgs · proof: claimed · $</div></div></div>
+<p>Built ABUZ8_BRAIN archive and a cinematic 8-agent AI CMO SaaS artifact.</p><p class="mut"><i>Artifacts, nothing live.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li>ABUZ8_BRAIN.tar.gz</li><li>AI CMO SaaS React artifact</li></ul><b>Decisions</b><ul><li>Tiers Free/$79/$149</li></ul>
+<b class="warn">Open loops</b><ul><li>Deploy AI CMO</li><li>Unpack archive on Pegasus</li><li>Stripe live</li></ul></details></div><div class="card gB" data-g="B" data-t="ahmad-1 worldview mining ahmad-1 miner v2 scanned 2,582 files in 18s (2,815 hits); drafted worldview with 21 gap questions.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">AHMAD-1 WORLDVIEW mining</a>
+<div class="mut">2026-08-31 · AHMAD-1 · 0 msgs · proof: verified</div></div></div>
+<p>MINER v2 scanned 2,582 files in 18s (2,815 hits); drafted WORLDVIEW with 21 gap questions.</p><p class="mut"><i>Real extraction.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>MISSION_AHMAD1_UNBLOCK.md</li><li>AHMAD_WORLDVIEW.draft.md</li></ul><b>Decisions</b><ul><li>Split-corpus exam protocol with canaries</li></ul>
+<b class="warn">Open loops</b><ul><li>Answer the 21 GAPS questions</li></ul></details></div><div class="card gB" data-g="B" data-t="names fused into ahmad-1 ahmad-1 fused brain names, rewrote global claude.md, created ahmad-1 folder.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Names fused into AHMAD-1</a>
+<div class="mut">2026-08-31 · AHMAD-1 · 0 msgs · proof: claimed</div></div></div>
+<p>Fused brain names, rewrote global CLAUDE.md, created AHMAD-1 folder.</p><p class="mut"><i>Structure.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>C:\Users\wirec\.claude\CLAUDE.md</li><li>E:\ABU\02_PROJECTS\AHMAD-1\GOAL\01_WHAT_IT_IS.md</li></ul><b>Decisions</b><ul><li>One brain name</li><li>Brick one = arabic_root.py</li></ul>
+<b class="warn">Open loops</b><ul><li>Build arabic_root.py + 10-word probe</li></ul></details></div><div class="card gC" data-g="C" data-t="projects since march 3 audit inventory: many built things, zero revenue.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Projects since March 3</a>
+<div class="mut">2026-08-31 · Audit · 0 msgs · proof: none · $</div></div></div>
+<p>Inventory: many built things, zero revenue.</p><p class="mut"><i>Audit.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>Update memory in place</li></ul>
+<b class="warn">Open loops</b><ul><li>Stripe live</li><li>Contact Mohammed</li></ul></details></div><div class="card gB" data-g="B" data-t="bookkeeping spine on disk organization master_map.md, plan_90_days.md, /handoff skill on disk; solomon identified; palette locked.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Bookkeeping spine on disk</a>
+<div class="mut">2026-08-31 · Organization · 0 msgs · proof: verified</div></div></div>
+<p>MASTER_MAP.md, PLAN_90_DAYS.md, /handoff skill on disk; Solomon identified; palette locked.</p><p class="mut"><i>Real structure on disk.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>MASTER_MAP.md</li><li>PLAN_90_DAYS.md</li><li>/handoff skill</li><li>Operations Ledger HTML</li></ul><b>Decisions</b><ul><li>ABUZ8_OS_DIST is the one trunk</li><li>Dark palette spec</li></ul>
+<b class="warn">Open loops</b><ul><li>Hackathon gates (deadline missed)</li></ul></details></div><div class="card gC" data-g="C" data-t="higgsfield sites + 4 products lotvue / studio demo vs pilot vs product explained; gstack found but not activated.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Higgsfield sites + 4 products</a>
+<div class="mut">2026-08-31 · LotVue / Studio · 0 msgs · proof: none · $</div></div></div>
+<p>Demo vs pilot vs product explained; gstack found but not activated.</p><p class="mut"><i>Framework only.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>Local first</li></ul>
+<b class="warn">Open loops</b><ul><li>LotVue demo for Bob</li><li>Activate gstack</li></ul></details></div><div class="card gC" data-g="C" data-t="making money diagnosis revenue diagnosis: new organizing docs every session; stripe + mohammed untouched.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Making money diagnosis</a>
+<div class="mut">2026-08-31 · Revenue · 0 msgs · proof: none · $</div></div></div>
+<p>Diagnosis: new organizing docs every session; Stripe + Mohammed untouched.</p><p class="mut"><i>Diagnosis.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>No new organizing documents</li></ul>
+<b class="warn">Open loops</b><ul><li>Name the single canonical file</li><li>Stripe live</li><li>Contact Mohammed</li></ul></details></div><div class="card gF" data-g="F" data-t="find aug 23 export recovery nothing found; unresolved.">
+<div class="hd"><span class="gr">F</span><div><a href="https://claude.ai/recents" target="_blank">Find Aug 23 export</a>
+<div class="mut">2026-08-29 · Recovery · 0 msgs · proof: none</div></div></div>
+<p>Nothing found; unresolved.</p><p class="mut"><i>Nothing.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gF" data-g="F" data-t="greeting ping  greeting / save test.">
+<div class="hd"><span class="gr">F</span><div><a href="https://claude.ai/recents" target="_blank">Greeting ping</a>
+<div class="mut">2026-08-29 ·  · 0 msgs · proof: none</div></div></div>
+<p>Greeting / save test.</p><p class="mut"><i>No task.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="mac studio pricing hardware ask above market; counteroffer range.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Mac Studio pricing</a>
+<div class="mut">2026-08-29 · Hardware · 0 msgs · proof: none</div></div></div>
+<p>Ask above market; counteroffer range.</p><p class="mut"><i>Useful answer.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="honest self-assessment career gap is shipping, not intelligence; hourly-income path.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Honest self-assessment</a>
+<div class="mut">2026-08-28 · Career · 0 msgs · proof: none · $</div></div></div>
+<p>Gap is shipping, not intelligence; hourly-income path.</p><p class="mut"><i>Advice.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Run data export for metrics</li></ul></details></div><div class="card gC" data-g="C" data-t="litellm routing reply x content litellm fallback is failure-based; cost cap unverified; 3 replies.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">LiteLLM routing reply</a>
+<div class="mut">2026-08-28 · X content · 0 msgs · proof: none</div></div></div>
+<p>LiteLLM fallback is failure-based; cost cap unverified; 3 replies.</p><p class="mut"><i>Honest copy.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>3 reply variants</li></ul><b>Decisions</b><ul><li>Omit unverified cost-cap claim</li></ul>
+<b class="warn">Open loops</b><ul><li>Probe LiteLLM cost cap on :4000</li></ul></details></div><div class="card gC" data-g="C" data-t="status + hackathon plan ata status briefing and submission plan; mcp down.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Status + hackathon plan</a>
+<div class="mut">2026-08-28 · ATA · 0 msgs · proof: none</div></div></div>
+<p>Status briefing and submission plan; MCP down.</p><p class="mut"><i>Plan.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Submit ATA (missed)</li><li>Restore MCP</li></ul></details></div><div class="card gF" data-g="F" data-t="video idea link  link not readable; no follow-up.">
+<div class="hd"><span class="gr">F</span><div><a href="https://claude.ai/recents" target="_blank">Video idea link</a>
+<div class="mut">2026-08-26 ·  · 0 msgs · proof: none</div></div></div>
+<p>Link not readable; no follow-up.</p><p class="mut"><i>Nothing.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="ahmad-1 prep gap ahmad-1 division of labor across ais and a list of 6 unbuilt components.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">AHMAD-1 prep gap</a>
+<div class="mut">2026-08-26 · AHMAD-1 · 0 msgs · proof: none</div></div></div>
+<p>Division of labor across AIs and a list of 6 unbuilt components.</p><p class="mut"><i>Gap list.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Build one: arabic_root.py / packet schema / grader / generator / WORLDVIEW / eval</li></ul></details></div><div class="card gB" data-g="B" data-t="master os + ledger + agt spec organization three big html docs: master os, 7-tab ledger, agt architecture.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Master OS + Ledger + AGT spec</a>
+<div class="mut">2026-08-26 · Organization · 0 msgs · proof: claimed · $</div></div></div>
+<p>Three big HTML docs: master OS, 7-tab ledger, AGT architecture.</p><p class="mut"><i>Docs.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li>ABUZ8_MASTER_OS.html</li><li>ABUZ8_LEDGER.html</li><li>ABUZ8_AGT_ARCHITECTURE.html</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Stripe live</li><li>Contact Mohammed</li><li>Unzip MUTHALLATH</li></ul></details></div><div class="card gC" data-g="C" data-t="synthon → multi-root sampling ahmad-1 monte carlo multi-root idea for arabic_root layer.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Synthon → multi-root sampling</a>
+<div class="mut">2026-08-26 · AHMAD-1 · 0 msgs · proof: none</div></div></div>
+<p>Monte Carlo multi-root idea for arabic_root layer.</p><p class="mut"><i>Idea.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>Vary entry root per retry</li></ul>
+<b class="warn">Open loops</b><ul><li>Add multi-root sampling to design</li></ul></details></div><div class="card gB" data-g="B" data-t="handoff protocol docx protocol seven-section branded docx with 5 crystallize prompts; dark palette fixed.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Handoff protocol docx</a>
+<div class="mut">2026-08-25 · Protocol · 0 msgs · proof: claimed</div></div></div>
+<p>Seven-section branded docx with 5 crystallize prompts; dark palette fixed.</p><p class="mut"><i>Delivered.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li>Handoff Protocol .docx</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gB" data-g="B" data-t="gq protocol + brain.md organization brain.md, current_state.md and tool instruction files on disk, verified untouched sacred files.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">GQ Protocol + BRAIN.md</a>
+<div class="mut">2026-08-25 · Organization · 0 msgs · proof: verified · $</div></div></div>
+<p>BRAIN.md, CURRENT_STATE.md and tool instruction files on disk, verified untouched sacred files.</p><p class="mut"><i>Real, verified writes.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li>E:\ABU\MISSION_CONTROL\BRAIN.md</li><li>CURRENT_STATE.md</li><li>COWORK/CLAUDE_CODE instructions</li></ul><b>Decisions</b><ul><li>7-step loop spine</li></ul>
+<b class="warn">Open loops</b><ul><li>GCP billing account on ahmad@abuz8ai.com</li><li>72h Gumroad sprint</li></ul></details></div><div class="card gB" data-g="B" data-t="abu health audit v6 pegasus ops passwordless read-only system audit script.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">ABU health audit v6</a>
+<div class="mut">2026-08-25 · Pegasus ops · 0 msgs · proof: claimed</div></div></div>
+<p>Passwordless read-only system audit script.</p><p class="mut"><i>Tool delivered.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li>ABU Health Audit v6</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="ai empire paths strategy five path blueprints with time breakdowns.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">AI empire paths</a>
+<div class="mut">2026-08-25 · Strategy · 0 msgs · proof: none · $</div></div></div>
+<p>Five path blueprints with time breakdowns.</p><p class="mut"><i>Plans.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Start Money Engine path</li></ul></details></div><div class="card gB" data-g="B" data-t="abukaido on hp spectre abukaido locked mission; built 5 hermes skills.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">AbuKaido on HP Spectre</a>
+<div class="mut">2026-08-25 · AbuKaido · 0 msgs · proof: claimed · $</div></div></div>
+<p>Locked mission; built 5 Hermes skills.</p><p class="mut"><i>Skills, no agent running.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>5 Hermes skills</li></ul><b>Decisions</b><ul><li>Naming law</li><li>Donation gate</li></ul>
+<b class="warn">Open loops</b><ul><li>Install Hermes on Spectre</li></ul></details></div><div class="card gC" data-g="C" data-t="ai empire (jarvis/kinect) strategy monetization breakdown and 90-day plan.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">AI empire (JARVIS/Kinect)</a>
+<div class="mut">2026-08-25 · Strategy · 0 msgs · proof: none · $</div></div></div>
+<p>Monetization breakdown and 90-day plan.</p><p class="mut"><i>Plans.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Fix Docker networking</li><li>n8n</li><li>Kinect + OpenCV</li></ul></details></div><div class="card gB" data-g="B" data-t="sophontic compare + packets a/b ahmad-1 built separate teaching and exam packets; donor-organ framing.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/chat/7d0925d0-1488-4024-b911-53db93ba33a0" target="_blank">Sophontic compare + Packets A/B</a>
+<div class="mut">2026-08-25 · AHMAD-1 · 0 msgs · proof: claimed</div></div></div>
+<p>Built separate teaching and exam packets; donor-organ framing.</p><p class="mut"><i>Real training material.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li>Packet A</li><li>Packet B</li></ul><b>Decisions</b><ul><li>Never mix questions and answers</li></ul>
+<b class="warn">Open loops</b><ul><li>Donor-organ architecture study + paper</li></ul></details></div><div class="card gB" data-g="B" data-t="memory audit + qadir soul memory gutted isnad to 5 rules, deleted dead files, created qadir-soul.md.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Memory audit + Qadir soul</a>
+<div class="mut">2026-08-25 · Memory · 0 msgs · proof: verified</div></div></div>
+<p>Gutted isnad to 5 rules, deleted dead files, created qadir-soul.md.</p><p class="mut"><i>Done.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li>/topics/qadir-soul.md</li></ul><b>Decisions</b><ul><li>Isnad is anti-lie, not gatekeeping</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gB" data-g="B" data-t="10-file brain package organization autonomous reconstruction: 10 files, 1,459 lines.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">10-file brain package</a>
+<div class="mut">2026-08-24 · Organization · 0 msgs · proof: claimed · $</div></div></div>
+<p>Autonomous reconstruction: 10 files, 1,459 lines.</p><p class="mut"><i>Docs.</i></p>
+<details><summary>Built / Decisions / Open loops (2)</summary>
+<b>Built</b><ul><li>10-file brain package</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Stripe live</li><li>Mohammed demo</li></ul></details></div><div class="card gB" data-g="B" data-t="forensic reconstruction html organization 22 projects, 14 decisions, 8 failure patterns.">
+<div class="hd"><span class="gr">B</span><div><a href="https://claude.ai/recents" target="_blank">Forensic reconstruction HTML</a>
+<div class="mut">2026-08-24 · Organization · 0 msgs · proof: claimed · $</div></div></div>
+<p>22 projects, 14 decisions, 8 failure patterns.</p><p class="mut"><i>Docs.</i></p>
+<details><summary>Built / Decisions / Open loops (4)</summary>
+<b>Built</b><ul><li>reconstruction HTML</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Stripe live</li><li>Deploy site package</li><li>Submit sitemap</li><li>Create YouTube channel</li></ul></details></div><div class="card gC" data-g="C" data-t="site damaged by fable? abuz8ai.com fetched site live; located jan 17 qadir naming chat.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Site damaged by Fable?</a>
+<div class="mut">2026-08-24 · abuz8ai.com · 0 msgs · proof: verified</div></div></div>
+<p>Fetched site live; located Jan 17 Qadir naming chat.</p><p class="mut"><i>Verified check.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gD" data-g="D" data-t="c: drive cleanup pegasus ops four-bucket triage; audit script written, not run.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">C: drive cleanup</a>
+<div class="mut">2026-08-24 · Pegasus ops · 0 msgs · proof: none</div></div></div>
+<p>Four-bucket triage; audit script written, not run.</p><p class="mut"><i>Mid-execution.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li>audit_c_vs_e.ps1</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Run audit</li><li>powercfg /h off</li><li>Set HF_HOME/UV_CACHE_DIR to E:</li></ul></details></div><div class="card gD" data-g="D" data-t="status briefing  brief only.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">Status briefing</a>
+<div class="mut">2026-08-24 ·  · 0 msgs · proof: none</div></div></div>
+<p>Brief only.</p><p class="mut"><i>Talk.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="frontier models &lt;32gb research ornith 1.5 35b-a3b and qwen3.6 as the field.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Frontier models &lt;32GB</a>
+<div class="mut">2026-08-24 · Research · 0 msgs · proof: none</div></div></div>
+<p>Ornith 1.5 35B-A3B and Qwen3.6 as the field.</p><p class="mut"><i>Research.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gD" data-g="D" data-t="os v2.65 probe handoff abuz8 os memory save after dc timeout; 7 findstr probes queued.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">OS v2.65 probe handoff</a>
+<div class="mut">2026-08-23 · ABUZ8 OS · 0 msgs · proof: none</div></div></div>
+<p>Memory save after DC timeout; 7 findstr probes queued.</p><p class="mut"><i>Handoff only.</i></p>
+<details><summary>Built / Decisions / Open loops (1)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li>Probe before commit</li></ul>
+<b class="warn">Open loops</b><ul><li>Run the 7 findstr probes</li></ul></details></div><div class="card gC" data-g="C" data-t="warning label (1)  self-description.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Warning label (1)</a>
+<div class="mut">2026-08-22 ·  · 0 msgs · proof: none</div></div></div>
+<p>Self-description.</p><p class="mut"><i>Fine; 3 near-duplicate chats.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="warning label (2)  self-description.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Warning label (2)</a>
+<div class="mut">2026-08-22 ·  · 0 msgs · proof: none</div></div></div>
+<p>Self-description.</p><p class="mut"><i>Duplicate.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="warning label (3)  self-description.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Warning label (3)</a>
+<div class="mut">2026-08-22 ·  · 0 msgs · proof: none</div></div></div>
+<p>Self-description.</p><p class="mut"><i>Duplicate.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="janus-pro scam check research real model, scam framing.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">Janus-Pro scam check</a>
+<div class="mut">2026-08-19 · Research · 0 msgs · proof: none</div></div></div>
+<p>Real model, scam framing.</p><p class="mut"><i>Useful.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gC" data-g="C" data-t="32gb benchmark table check research real names, fabricated numbers — da&#x27;if.">
+<div class="hd"><span class="gr">C</span><div><a href="https://claude.ai/recents" target="_blank">32GB benchmark table check</a>
+<div class="mut">2026-08-19 · Research · 0 msgs · proof: none</div></div></div>
+<p>Real names, fabricated numbers — da&#x27;if.</p><p class="mut"><i>Useful.</i></p>
+<details><summary>Built / Decisions / Open loops (0)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li class=mut>none</li></ul></details></div><div class="card gD" data-g="D" data-t="five-product sprint lanes revenue briefing; lotvue 502; asked to pick a lane.">
+<div class="hd"><span class="gr">D</span><div><a href="https://claude.ai/recents" target="_blank">Five-product sprint lanes</a>
+<div class="mut">2026-08-19 · Revenue · 0 msgs · proof: none · $</div></div></div>
+<p>Briefing; lotvue 502; asked to pick a lane.</p><p class="mut"><i>No lane picked.</i></p>
+<details><summary>Built / Decisions / Open loops (3)</summary>
+<b>Built</b><ul><li class=mut>none</li></ul><b>Decisions</b><ul><li class=mut>none</li></ul>
+<b class="warn">Open loops</b><ul><li>Pick lane</li><li>Fix lotvue 502</li><li>Stripe key</li></ul></details></div></div></main>
+<script>
+let f="";const q=document.getElementById('q');
+function run(){const s=q.value.toLowerCase();document.querySelectorAll('.card').forEach(c=>{
+c.style.display=(!f||c.dataset.g===f)&&(!s||c.dataset.t.includes(s))?'':'none'})}
+q.oninput=run;document.querySelectorAll('.bar button').forEach(b=>b.onclick=()=>{
+document.querySelectorAll('.bar button').forEach(x=>x.classList.remove('on'));b.classList.add('on');f=b.dataset.f;run()});
+</script></body></html>

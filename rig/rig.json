@@ -1,0 +1,208 @@
+{
+ "port": 8787,
+ "db": "rig.sqlite",
+ "yt_dlp": "yt-dlp",
+ "brain": {
+  "endpoints": [
+   "http://127.0.0.1:8011/v1",
+   "http://127.0.0.1:11434/v1",
+   "http://127.0.0.1:1234/v1"
+  ],
+  "model": "",
+  "timeout": 180
+ },
+ "agents": {
+  "signal": {
+   "kind": "signal",
+   "enabled": true,
+   "every_min": 60,
+   "prefilter": 24,
+   "keep_at": 55,
+   "offers": "Project Rescue $1,500 (fix a stuck software/AI project in 48h); Build Sprint $4,800 (2-week AI agent or automation build); AI agent/automation setup for small businesses; car-dealership software (LotVue); digital kits $19-59; hackathon prizes and startup credits",
+   "want": [
+    "ai agent",
+    "automation",
+    "n8n",
+    "claude",
+    "llm",
+    "chatbot",
+    "zapier",
+    "make.com",
+    "mcp",
+    "rag",
+    "scrape",
+    "dealership",
+    "car dealer",
+    "website",
+    "landing page",
+    "hackathon",
+    "grant",
+    "credits",
+    "freelance",
+    "contract",
+    "looking for",
+    "need someone",
+    "hiring",
+    "budget"
+   ],
+   "money_words": [
+    "$",
+    "paid",
+    "budget",
+    "prize",
+    "per hour",
+    "/hr",
+    "fixed price",
+    "retainer",
+    "grant",
+    "credits"
+   ],
+   "avoid": [
+    "unpaid",
+    "equity only",
+    "for exposure",
+    "full-time on-site",
+    "[for hire]",
+    "internship",
+    "rev share only"
+   ],
+   "sources": [
+    {
+     "type": "hn",
+     "q": "looking for freelancer AI agent"
+    },
+    {
+     "type": "hn",
+     "q": "hiring contract automation"
+    },
+    {
+     "type": "reddit",
+     "sub": "forhire"
+    },
+    {
+     "type": "reddit",
+     "sub": "slavelabour"
+    },
+    {
+     "type": "reddit",
+     "sub": "n8n"
+    },
+    {
+     "type": "reddit",
+     "sub": "smallbusiness"
+    },
+    {
+     "type": "reddit",
+     "sub": "askcarsales"
+    },
+    {
+     "type": "devpost"
+    },
+    {
+     "type": "rss",
+     "url": "https://www.producthunt.com/feed"
+    }
+   ],
+   "max_age_days": 10,
+   "keep_at_keyword": 36
+  },
+  "youtube": {
+   "kind": "youtube",
+   "enabled": true,
+   "every_min": 180,
+   "per_channel": 3,
+   "offers": "Project Rescue $1,500; Build Sprint $4,800; AI agent/automation builds; faceless content; digital kits $19-59",
+   "channels": [
+    {
+     "id": "UC2ojq-nuP8ceeHqiroeKhBA",
+     "name": "Nate Herk"
+    },
+    {
+     "id": "UCgscS8mBsQZ5sFRkJIFWD7Q",
+     "name": "Jay E | RoboNuggets"
+    },
+    {
+     "id": "UCxVxcTULO9cFU6SB9qVaisQ",
+     "name": "Jack Roberts"
+    },
+    {
+     "id": "UCc-FovAyBAQDw2Y7PQ_v0Zw",
+     "name": "Julian Goldie SEO"
+    },
+    {
+     "id": "UCPjNBjflYl0-HQtUvOx0Ibw",
+     "name": "Greg Isenberg"
+    },
+    {
+     "id": "UChhw6DlKKTQ9mYSpTfXUYqA",
+     "name": "Starter Story"
+    }
+   ]
+  },
+  "claude": {
+   "kind": "cli",
+   "enabled": true,
+   "every_min": 1,
+   "timeout": 3600,
+   "take_unassigned": true,
+   "cwd": "E:\\ABU",
+   "preamble": "You are a seat on the ABUZ8 RIG. Do the task, verify it with a real probe, and end with DONE/BLOCKED plus the proof. Task: ",
+   "command": [
+    "claude",
+    "-p",
+    "{prompt}",
+    "--permission-mode",
+    "acceptEdits"
+   ]
+  },
+  "codex": {
+   "kind": "cli",
+   "enabled": false,
+   "every_min": 1,
+   "timeout": 3600,
+   "cwd": "E:\\ABU",
+   "preamble": "You are a seat on the ABUZ8 RIG. Do the task and verify it. Task: ",
+   "command": [
+    "codex",
+    "exec",
+    "{prompt}"
+   ]
+  },
+  "qwen": {
+   "kind": "cli",
+   "enabled": false,
+   "every_min": 1,
+   "timeout": 3600,
+   "cwd": "E:\\ABU",
+   "preamble": "You are a seat on the ABUZ8 RIG. Do the task and verify it. Task: ",
+   "command": [
+    "qwen",
+    "-p",
+    "{prompt}"
+   ]
+  },
+  "digest": {
+   "kind": "digest",
+   "enabled": true,
+   "every_min": 15,
+   "hour": 8,
+   "top": 5,
+   "min_score": 60
+  },
+  "openrig": {
+   "kind": "openrig",
+   "enabled": false,
+   "every_min": 2,
+   "seat": "dev-owner@first-project-claude",
+   "inbox_win": "E:\\ABU\\RIG_INBOX",
+   "inbox_posix": "/mnt/e/ABU/RIG_INBOX",
+   "preamble": "Task from the ABUZ8 board. Track it in your queue, have your checker verify the exact candidate. Task: "
+  }
+ },
+ "yt_dlp_args": [],
+ "telegram": {
+  "token": "",
+  "chat_id": "",
+  "api": "https://api.telegram.org"
+ }
+}
